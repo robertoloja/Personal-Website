@@ -20,8 +20,8 @@ class Main extends React.Component {
 
         <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Projects</h2>
-          <span className="image main"><img src="/static/images/pic02.jpg" alt="" /></span>
-          <p>Bar</p>
+          {/*<span className="image main"></span>*/}
+          <h3>SmartHive</h3>
           {close}
         </article>
 
