@@ -82,8 +82,13 @@ const MenuTabs = () => {
                 ]} 
               />
               </TabPanel>
+
               <TabPanel>
-                <p>foo</p>
+                <p>This was a quick CRUD application made in Django, bespoke to fit a specific person's needs.</p>
+              </TabPanel>
+
+              <TabPanel>
+                <p>This is a Next.js project deployed as a static page on Netlify.</p>
               </TabPanel>
             </Tabs>
   )}
