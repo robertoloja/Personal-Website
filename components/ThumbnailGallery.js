@@ -44,7 +44,8 @@ export default class ThumbnailGallery extends Component {
                         background: 'rgba(30, 30, 30, 0.5)', 
                         borderRadius: '5px', 
                         padding: '40px',
-                        paddingBottom: '20px'
+                        paddingBottom: '20px',
+                        verticalAlign: 'text-top',
                       }}>
             {this.state.image_captions[this.state.activeIndex].map((x) => <p>{x}</p>)}
           </div>
@@ -61,5 +62,6 @@ const thumbnailGalleryStyles = {
   margin: '10px auto',
   paddingBottom: '100px',
   display: 'flex',
-  borderRadius: '5px'
+  borderRadius: '5px',
+  verticalAlign: 'text-top'
 }
