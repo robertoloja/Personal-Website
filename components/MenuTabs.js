@@ -5,7 +5,6 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 const MenuTabs = () => {
   const tabStyle = {
                       borderTop: 'solid 1px',
-                      borderLeft: 'solid 1px',
                       borderRight: 'solid 1px',
                       float: 'left',
                       textAlign: 'center',
@@ -16,13 +15,14 @@ const MenuTabs = () => {
 
   const firstTabStyle = (() => { 
                                  let firstStyle = Object.assign({}, tabStyle)
-                                 firstStyle['borderRadius'] = '5px 0 0 0' 
+                                 firstStyle['borderRadius'] = '3px 0 0 0' 
+                                 firstStyle['borderLeft'] = 'solid 1px' 
                                  return firstStyle
                                })()
 
   const lastTabStyle = (() => { 
                                   let lastStyle = Object.assign({}, tabStyle)
-                                  lastStyle['borderRadius'] = '0 5px 0 0' 
+                                  lastStyle['borderRadius'] = '0 3px 0 0' 
                                   return lastStyle
                                 })()
 
@@ -98,6 +98,12 @@ const MenuTabs = () => {
                   },
                 ]} 
               />
+              </TabPanel>
+              <TabPanel>
+                <p>foo</p>
+              </TabPanel>
+              <TabPanel>
+                <p>foo</p>
               </TabPanel>
               <TabPanel>
                 <p>foo</p>
