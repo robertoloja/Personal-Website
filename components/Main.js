@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import faLinkedIn from '@fortawesome/fontawesome-free-brands/faLinkedin'
+import ThumbnailGallery from './ThumbnailGallery'
 
 class Main extends React.Component {
   render() {
@@ -20,8 +21,8 @@ class Main extends React.Component {
 
         <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Projects</h2>
-          {/*<span className="image main"></span>*/}
           <h3>SmartHive</h3>
+          <ThumbnailGallery />
           {close}
         </article>
 
