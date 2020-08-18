@@ -1,7 +1,6 @@
 import React from 'react'
 import ThumbnailGallery from './ThumbnailGallery'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 
 const MenuTabs = () => {
   const tabStyle = {
@@ -10,22 +9,40 @@ const MenuTabs = () => {
                       borderRight: 'solid 1px',
                       float: 'left',
                       textAlign: 'center',
-                      padding: '20px',
+                      padding: '10px',
+                      marginBottom: '-20px',
+                      cursor: 'pointer',
                     }
+
+  const firstTabStyle = (() => { 
+                                 let firstStyle = Object.assign({}, tabStyle)
+                                 firstStyle['borderRadius'] = '5px 0 0 0' 
+                                 return firstStyle
+                               })()
+
+  const lastTabStyle = (() => { 
+                                  let lastStyle = Object.assign({}, tabStyle)
+                                  lastStyle['borderRadius'] = '0 5px 0 0' 
+                                  return lastStyle
+                                })()
 
   return(
           <Tabs style={{
                           margin: 0,
                           padding: 0,
-                       }}>
+                       }}
+                disabledTabClassName='disabled_project_tab'>
             <TabList style={{
                               listStyleType: 'none', 
                               margin: 0, 
                               padding: 0, 
+                              paddingLeft: '40px',
                               overflow: 'hidden'
                             }}>
-              <Tab style={tabStyle}><h3>SmartHive</h3></Tab>
-              <Tab style={tabStyle}><h3>Foo</h3></Tab>
+              <Tab style={firstTabStyle}><h3>SmartHive</h3></Tab>
+              <Tab style={tabStyle}><h3>Book Inventory</h3></Tab>
+              <Tab style={tabStyle}><h3>This Website</h3></Tab>
+              <Tab style={lastTabStyle}><h3>Non-Software</h3></Tab>
             </TabList>
 
             <TabPanel style={{ paddingTop: '1rem' }}>
