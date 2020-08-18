@@ -18,7 +18,6 @@ export default class ThumbnailGallery extends Component {
   }
 
   render() {
-    console.log(this.state.image_captions)
     return (
       <div style={thumbnailGalleryStyles}>
 
@@ -36,10 +35,19 @@ export default class ThumbnailGallery extends Component {
         </div>
 
         {/* Right */}
-        <div style={{ flex: 1, padding: '50px', color: 'white' }}>
-          <p>
-            {this.state.image_captions[this.state.activeIndex]}
-          </p>
+        <div style={{ 
+                      flex: 1, 
+                      padding: '50px', 
+                      color: 'white', 
+                    }}>
+          <div style={{
+                        background: 'rgba(30, 30, 30, 0.5)', 
+                        borderRadius: '5px', 
+                        padding: '40px',
+                        paddingBottom: '20px'
+                      }}>
+            {this.state.image_captions[this.state.activeIndex].map((x) => <p>{x}</p>)}
+          </div>
         </div>
       </div>
     )
@@ -47,10 +55,11 @@ export default class ThumbnailGallery extends Component {
 }
 
 const thumbnailGalleryStyles = {
-  background: 'rgba(75, 75, 75, 0.3)',
-  height: '500px',
+  background: 'rgba(75, 75, 75, 0.0)',
+  height: '100%',
   width: '100%',
   margin: '10px auto',
+  paddingBottom: '100px',
   display: 'flex',
   borderRadius: '5px'
 }
