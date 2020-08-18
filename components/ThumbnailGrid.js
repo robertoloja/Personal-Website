@@ -1,21 +1,25 @@
 import React from 'react'
 import Thumbnail from './Thumbnail'
 
-const ThumbnailGrid = ({images}) => {
+const ThumbnailGrid = ({image_filenames, handleClick}) => {
   return (
   <div style={styles}>
     {
-      images.map((image) => <Thumbnail imgSrc={'/static/images/thumbnails/' + 
-          image + '.png'} />)
+      image_filenames.map((image, i) => <Thumbnail 
+                                 imgSrc={'/static/images/thumbnails/' + 
+                                 image + '.png'} 
+                                 handleClick={handleClick}
+                                 index={i}
+                               />
+      )
     }
   </div>
   )
 }
 
 const styles = {
-  height: '35%',
+  height: '25%',
   width: '100%',
-  background: '#ddd',
   display: 'flex',
   flexWrap: 'wrap',
   padding: '5px'

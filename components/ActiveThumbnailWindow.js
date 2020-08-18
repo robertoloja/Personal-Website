@@ -1,13 +1,16 @@
 import React from 'react'
 
-const ActiveThumbnailWindow = () => {
+const ActiveThumbnailWindow = ({ image_filenames, activeIndex }) => {
   return (
     <div style={styles}>
       <img 
-        src="/static/images/housing-render.png" 
+        src={'/static/images/' + image_filenames[activeIndex] + '.png' }
         style={{
-          width: '100%',
-          padding: '20px'
+          maxHeight: '100%',
+          maxWidth: '95%',
+          margin: 'auto',
+          padding: '20px',
+          display: 'block',
         }}
       />
     </div>
@@ -15,7 +18,7 @@ const ActiveThumbnailWindow = () => {
 }
 
 const styles = {
-  height: '65%',
+  height: '75%',
   width: '100%',
   position: 'relative'
 }

@@ -22,7 +22,23 @@ class Main extends React.Component {
         <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Projects</h2>
           <h3>SmartHive</h3>
-          <ThumbnailGallery />
+          <p>
+            Bee populations have been in decline since the late 1990's (citation needed) and, since pollination by bees accounts 
+            for as much as 40% of global agricultural production (citation needed), the decline in bee populations has direct 
+            consequences to humans. 
+          </p>
+
+          <p>
+            As the global decline of bee populations accelerates, and the time investment of training beekepers remains constant,
+            it becomes important to increase existing beekeepers' reach. 
+          </p>
+          <ThumbnailGallery 
+            images={[
+              {image_filename: 'housing-render', image_caption: 'A housing was designed for the '},
+              {image_filename: 'HiveList', image_caption: 'FOO'},
+              {image_filename: 'HiveInfo', image_caption: 'BAR'}
+            ]} 
+          />
           {close}
         </article>
 
