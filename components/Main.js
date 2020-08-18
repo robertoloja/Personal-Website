@@ -4,13 +4,9 @@ import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import faLinkedIn from '@fortawesome/fontawesome-free-brands/faLinkedin'
 import MenuTabs from './MenuTabs'
 import emailjs from 'emailjs-com'
+import ReCAPTCHA from "react-google-recaptcha"
 
 class Main extends React.Component {
-  handleSubmit() {
-    event.preventDefault();
-    console.log("submit!")
-  }
-
   sendEmail(e) {
     e.preventDefault();
 
@@ -64,6 +60,13 @@ class Main extends React.Component {
               <li><input type="reset" value="Reset" /></li>
             </ul>
           </form>
+          <ReCAPTCHA
+            style={{marginBottom: '30px'}}
+            sitekey="YOUR_SITE_KEY"
+            render="explicit"
+            onloadCallback={this.recaptchaLoaded}
+            verifyCallback={this.verifiedRecaptcha}
+          />
 
           <ul className="icons">
             <li><a href="https://www.linkedin.com/in/robertoloja/">

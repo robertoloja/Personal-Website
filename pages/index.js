@@ -77,6 +77,7 @@ class IndexPage extends React.Component {
                     <Head>
                         <title>Roberto Loja</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
+                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                         <script type="text/javascript"
                                 src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
                         </script>
