@@ -9,11 +9,11 @@ export default class ThumbnailGallery extends Component {
         {/* Left */}
         <div style={{ flex: 1 }}>
           <ActiveThumbnailWindow />
-          <ThumbnailGrid />
+          <ThumbnailGrid images={['HiveInfo', 'HiveList', 'housing-render']}/>
         </div>
 
         {/* Right */}
-        <div style={{ flex: 1, padding: '40px', color: 'black' }}>
+        <div style={{ flex: 1, padding: '30px', color: 'black' }}>
           Project description
         </div>
       </div>
@@ -26,5 +26,6 @@ const thumbnailGalleryStyles = {
   height: '500px',
   width: '100%',
   margin: '10px auto',
-  display: 'flex'
+  display: 'flex',
+  borderRadius: '5px'
 }

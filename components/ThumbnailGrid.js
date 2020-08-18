@@ -1,23 +1,24 @@
 import React from 'react'
 import Thumbnail from './Thumbnail'
 
-const ThumbnailGrid = () => {
+const ThumbnailGrid = ({images}) => {
   return (
   <div style={styles}>
-    <Thumbnail imgSrc='/static/images/HiveInfo.png' />
-    <Thumbnail />
-    <Thumbnail />
-    <Thumbnail />
+    {
+      images.map((image) => <Thumbnail imgSrc={'/static/images/thumbnails/' + 
+          image + '.png'} />)
+    }
   </div>
   )
 }
 
 const styles = {
-  height: '100px',
+  height: '35%',
   width: '100%',
-  background: '#888',
+  background: '#ddd',
   display: 'flex',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  padding: '5px'
 }
 
 export default ThumbnailGrid
