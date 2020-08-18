@@ -3,8 +3,25 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import faLinkedIn from '@fortawesome/fontawesome-free-brands/faLinkedin'
 import MenuTabs from './MenuTabs'
+import emailjs from 'emailjs-com'
 
 class Main extends React.Component {
+  handleSubmit() {
+    event.preventDefault();
+    console.log("submit!")
+  }
+
+  sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('gmail', 'template_SMPJvZyB', e.target, 'user_grrrmewkPIwj6Xm5SsgKd')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
+
   render() {
 
     let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
@@ -28,24 +45,26 @@ class Main extends React.Component {
 
         <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Contact</h2>
-          <form method="post" action="#">
+
+          <form onSubmit={this.sendEmail}>
             <div className="field half first">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="from_name" id="name" />
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
+              <input type="text" name="from_email" id="email" />
             </div>
             <div className="field">
               <label htmlFor="message">Message</label>
               <textarea name="message" id="message" rows="4"></textarea>
             </div>
             <ul className="actions">
-              <li><input type="submit" value="Send Message" className="special" /></li>
+              <li><button type="submit" value="Send Message" className="special">Send Message</button></li>
               <li><input type="reset" value="Reset" /></li>
             </ul>
           </form>
+
           <ul className="icons">
             <li><a href="https://www.linkedin.com/in/robertoloja/">
               <FontAwesomeIcon icon={faLinkedIn} />

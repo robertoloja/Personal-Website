@@ -1,5 +1,6 @@
 import Head from "next/head"
 import stylesheet from 'styles/main.scss'
+import emailjs from 'emailjs-com'
 
 
 import Header from "../components/Header"
@@ -76,6 +77,14 @@ class IndexPage extends React.Component {
                     <Head>
                         <title>Roberto Loja</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
+                        <script type="text/javascript"
+                                src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+                        </script>
+                        <script type="text/javascript">
+                          (function(){
+                              emailjs.init("user_grrrmewkPIwj6Xm5SsgKd")
+                          })();
+                        </script>
                     </Head>
 
                     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
