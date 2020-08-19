@@ -1,6 +1,6 @@
 import React from 'react'
 import ThumbnailGallery from './ThumbnailGallery'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabList, TabPanel, resetIdCounter } from 'react-tabs';
 import ReactPlayer from "react-player"
 
 const MenuTabs = () => {
@@ -27,6 +27,7 @@ const MenuTabs = () => {
                                   return lastStyle
                                 })()
 
+  resetIdCounter()
   return(
           <Tabs style={{
                           margin: 0,

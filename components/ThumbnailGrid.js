@@ -10,6 +10,7 @@ const ThumbnailGrid = ({image_filenames, handleClick}) => {
                                  image + '.png'} 
                                  handleClick={handleClick}
                                  index={i}
+                                 key={i}
                                />
       )
     }

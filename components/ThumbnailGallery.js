@@ -47,7 +47,7 @@ export default class ThumbnailGallery extends Component {
                         paddingBottom: '20px',
                         verticalAlign: 'text-top',
                       }}>
-            {this.state.image_captions[this.state.activeIndex].map((x) => <p>{x}</p>)}
+            {this.state.image_captions[this.state.activeIndex].map((x) => <p key={x}>{x}</p>)}
           </div>
         </div>
       </div>
