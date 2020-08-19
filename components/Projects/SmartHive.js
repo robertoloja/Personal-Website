@@ -3,7 +3,7 @@ import ThumbnailGallery from '../ThumbnailGallery/ThumbnailGallery'
 
 const SmartHive = () => {
     return (
-        <div>
+        <div style={{ padding: '40px' }}>
             <p>
                 Bee populations have been in decline since the late 1990's
                 (citation needed) and, since pollination by bees accounts
