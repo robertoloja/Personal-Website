@@ -1,5 +1,5 @@
 import React from 'react'
-import ThumbnailGallery from '../ThumbnailGallery'
+import ThumbnailGallery from '../ThumbnailGallery/ThumbnailGallery'
 
 const SmartHive = () => {
     return (
