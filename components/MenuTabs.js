@@ -44,7 +44,7 @@ const MenuTabs = () => {
               <Tab style={firstTabStyle}><h3>SmartHive</h3></Tab>
               <Tab style={tabStyle}><h3>Book Inventory</h3></Tab>
               <Tab style={tabStyle}><h3>This Website</h3></Tab>
-              <Tab style={lastTabStyle}><h3>Non-Software</h3></Tab>
+              <Tab style={lastTabStyle}><h3>Other</h3></Tab>
             </TabList>
 
             <TabPanel style={{ paddingTop: '1rem' }}>
