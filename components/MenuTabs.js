@@ -101,7 +101,8 @@ const MenuTabs = () => {
               />
               </TabPanel>
               <TabPanel>
-                <p>Book Inventory</p>
+                <p>This as a piece of bespoke home software for an elderly friend beset by an overlarge book collection.</p>
+                <p></p>
               </TabPanel>
               <TabPanel>
                 <p>This website</p>
@@ -113,7 +114,7 @@ const MenuTabs = () => {
                 <ReactPlayer 
                   url='https://soundcloud.com/roberto-loja-488022066/riff1-2020-07-08-1017-am'
                   width='25%'
-                  height='100px'
+                  height='80px'
                   />
 
                 <p>
