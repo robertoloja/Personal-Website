@@ -2,50 +2,59 @@ import PropTypes from 'prop-types';
 import Projects from './Projects'
 import AboutMe from './AboutMe'
 import ContactForm from './ContactForm'
+import React from "react";
 
 class Main extends React.Component {
-  render() {
+    render() {
 
-    let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
-    return (
-      <div id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
+        let close = <div className="close" onClick={() => {
+            this.props.onCloseArticle()
+        }}/>
+        return (
+            <div id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
 
-        <article id="about_me" className={`${this.props.article === 'about_me' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">About Me</h2>
-          <span className="image main"><img src="/static/images/pic01.jpg" alt="" /></span>
+                <article id="about_me"
+                         className={`${this.props.article === 'about_me' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`}
+                         style={{display: 'none'}}>
+                    <h2 className="major">About Me</h2>
+                    <span className="image main"><img src="/static/images/pic01.jpg" alt=""/></span>
 
-          <AboutMe />
+                    <AboutMe/>
 
-          {close}
-        </article>
+                    {close}
+                </article>
 
-        <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">Projects</h2>
+                <article id="projects"
+                         className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`}
+                         style={{display: 'none'}}>
+                    <h2 className="major">Projects</h2>
 
-          <Projects />
+                    <Projects/>
 
-          {close}
-        </article>
+                    {close}
+                </article>
 
-        <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">Contact</h2>
+                <article id="contact"
+                         className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`}
+                         style={{display: 'none'}}>
+                    <h2 className="major">Contact</h2>
 
-          <ContactForm />
+                    <ContactForm/>
 
-          {close}
-        </article>
+                    {close}
+                </article>
 
-      </div>
-    )
-  }
+            </div>
+        )
+    }
 }
 
 Main.propTypes = {
-  route: PropTypes.object,
-  article: PropTypes.string,
-  articleTimeout: PropTypes.bool,
-  onCloseArticle: PropTypes.func,
-  timeout: PropTypes.bool
+    route: PropTypes.object,
+    article: PropTypes.string,
+    articleTimeout: PropTypes.bool,
+    onCloseArticle: PropTypes.func,
+    timeout: PropTypes.bool
 }
 
 export default Main

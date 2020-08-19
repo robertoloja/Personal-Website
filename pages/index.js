@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
 
     componentDidMount() {
         this.timeoutId = setTimeout(() => {
-            this.setState({ loading: "" })
+            this.setState({loading: ""})
         }, 100)
     }
 
@@ -70,28 +70,31 @@ class IndexPage extends React.Component {
             })
         }, 350)
     }
+
     render() {
         return (
             <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`}>
                 <div>
                     <Head>
                         <title>Roberto Loja</title>
-                        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
+                        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i"
+                              rel="stylesheet"/>
                         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                         <script type="text/javascript"
                                 src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
                         </script>
                         <script type="text/javascript">
-                          (function(){
-                              emailjs.init("user_grrrmewkPIwj6Xm5SsgKd")
-                          })();
+                            (function (){
+                            emailjs.init("user_grrrmewkPIwj6Xm5SsgKd")
+                        })
+                        ();
                         </script>
                     </Head>
 
-                    <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+                    <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
 
                     <div id="wrapper">
-                        <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+                        <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout}/>
                         <Main
                             isArticleVisible={this.state.isArticleVisible}
                             timeout={this.state.timeout}
@@ -99,10 +102,10 @@ class IndexPage extends React.Component {
                             article={this.state.article}
                             onCloseArticle={this.handleCloseArticle}
                         />
-                        <Footer timeout={this.state.timeout} />
+                        <Footer timeout={this.state.timeout}/>
                     </div>
 
-                    <div id="bg" />
+                    <div id="bg"/>
                 </div>
             </div>
         )

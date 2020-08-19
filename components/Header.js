@@ -6,7 +6,7 @@ const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
             {/*<span className="icon fa-diamond"></span>*/}
-            <FontAwesomeIcon icon={faGem} transform="grow-18" />
+            <FontAwesomeIcon icon={faGem} transform="grow-18"/>
         </div>
         <div className="content">
             <div className="inner">
@@ -16,9 +16,15 @@ const Header = (props) => (
         </div>
         <nav>
             <ul>
-                <li><a href="#" onClick={() => {props.onOpenArticle('about_me')}}>About Me</a></li>
-                <li><a href="#" onClick={() => {props.onOpenArticle('projects')}}>Projects</a></li>
-                <li><a href="#" onClick={() => {props.onOpenArticle('contact')}}>Contact</a></li>
+                <li><a href="#" onClick={() => {
+                    props.onOpenArticle('about_me')
+                }}>About Me</a></li>
+                <li><a href="#" onClick={() => {
+                    props.onOpenArticle('projects')
+                }}>Projects</a></li>
+                <li><a href="#" onClick={() => {
+                    props.onOpenArticle('contact')
+                }}>Contact</a></li>
             </ul>
         </nav>
     </header>
