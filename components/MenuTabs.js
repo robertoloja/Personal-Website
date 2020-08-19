@@ -1,6 +1,7 @@
 import React from 'react'
 import ThumbnailGallery from './ThumbnailGallery'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import ReactPlayer from "react-player"
 
 const MenuTabs = () => {
   const tabStyle = {
@@ -100,13 +101,29 @@ const MenuTabs = () => {
               />
               </TabPanel>
               <TabPanel>
-                <p>foo</p>
+                <p>Book Inventory</p>
               </TabPanel>
               <TabPanel>
-                <p>foo</p>
+                <p>This website</p>
               </TabPanel>
               <TabPanel>
-                <p>foo</p>
+                <p>
+                  I've been known to make music. Here's a piece of one:
+                </p>
+                <ReactPlayer 
+                  url='https://soundcloud.com/roberto-loja-488022066/riff1-2020-07-08-1017-am'
+                  width='25%'
+                  height='100px'
+                  />
+
+                <p>
+                  I've also made some art. Lately, I seem to be interested in voxels:
+                </p>
+
+                <p>
+                  It also appears that I have written the beginnings of a science-fiction short story or novella.
+                </p>
+
               </TabPanel>
             </Tabs>
   )}
