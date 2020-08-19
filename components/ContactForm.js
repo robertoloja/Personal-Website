@@ -1,6 +1,9 @@
 import React from 'react'
 import ReCAPTCHA from "react-google-recaptcha"
 import emailjs from 'emailjs-com'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
+import faLinkedIn from '@fortawesome/fontawesome-free-brands/faLinkedin'
 
 const ContactForm = () => {
   function sendEmail(e) {
@@ -38,6 +41,14 @@ const ContactForm = () => {
       style={{marginBottom: '30px'}}
       sitekey="6LfqnsAZAAAAAD9R9DQ41C3XHDp8iCdsRMpayupJ"
     />
+    <ul className="icons">
+      <li><a href="https://www.linkedin.com/in/robertoloja/">
+        <FontAwesomeIcon icon={faLinkedIn} />
+      </a></li>
+      <li><a href="https://github.com/robertoloja">
+        <FontAwesomeIcon icon={faGithub} />
+      </a></li>
+    </ul>
   </div>
   )
 }

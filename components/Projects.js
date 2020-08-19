@@ -3,7 +3,7 @@ import ThumbnailGallery from './ThumbnailGallery'
 import { Tab, Tabs, TabList, TabPanel, resetIdCounter } from 'react-tabs';
 import ReactPlayer from "react-player"
 
-const MenuTabs = () => {
+const Projects = () => {
   const tabStyle = {
                       borderTop: 'solid 1px',
                       borderRight: 'solid 1px',
@@ -130,4 +130,4 @@ const MenuTabs = () => {
             </Tabs>
   )}
 
-export default MenuTabs
+export default Projects
