@@ -7,9 +7,9 @@ const SmartHive = () => {
         <div style={{padding: '40px', color: '#ddd'}}>
             <p>
                 Bee populations have been in decline since the late 1990's and,
-                since <a href='#'><Floater showCloseButton={true}
+                since <a><Floater showCloseButton={true}
                                            content={
-                                               <a href='http://archive-ouverte.unige.ch/unige:32251'>
+                                               <a>
                                                    Kluser, S., Neumann, P., Chauzat, M., Pettis, J. S., Peduzzi, P.,
                                                    Witt, R.,
                                                    ... Theuri, M. (2010). Global honey bee colony disorders and other
