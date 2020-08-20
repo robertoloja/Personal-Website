@@ -63,6 +63,14 @@ const SmartHive = () => {
                     },
                 ]}
             />
+            <img src='/static/images/SmartHive-SystemDiagram.svg' style={{
+                width: '100%',
+                padding: '40px',
+                paddingTop: '10px',
+                margin: 0,
+                backgroundColor: 'rgba(30, 30, 30, 0.5)',
+                borderRadius: '5px',
+            }}/>
         </div>
     )
 }
