@@ -1,15 +1,21 @@
 import React from 'react'
 import ThumbnailGallery from '../ThumbnailGallery/ThumbnailGallery'
+import Floater from 'react-floater'
 
 const SmartHive = () => {
     return (
         <div style={{padding: '40px'}}>
             <p>
-                Bee populations have been in decline since the late 1990's
-                (citation needed) and, since pollination by bees accounts
-                for as much as 40% of global agricultural production (citation
-                needed), the decline in bee populations has direct consequences
-                to humans.
+                Bee populations have been in decline since the late 1990's and,
+                since <a href='#'><Floater showCloseButton={true}
+                                     content={
+                                         <a href='http://archive-ouverte.unige.ch/unige:32251'>
+                                             Kluser, S., Neumann, P., Chauzat, M., Pettis, J. S., Peduzzi, P., Witt, R.,
+                                             ... Theuri, M. (2010). Global honey bee colony disorders and other threats
+                                             to insect pollinators.
+                                         </a>
+                                     }>bees pollinate as many as 75% of all plant species</Floater></a>,
+                the decline in bee populations has direct consequences to humans.
             </p>
 
             <p>
@@ -20,7 +26,7 @@ const SmartHive = () => {
                     Collective</a>). Thus, urban hives are generally more well tended.
             </p>
 
-            <p style={{marginBottom: '-20px'}}>
+            <p>
                 But as the global decline of bee populations accelerates, and the time
                 investment of training beekepers remains constant, it becomes important
                 to increase existing beekeepers' reach. SmartHive was designed as a tool
