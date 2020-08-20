@@ -5,8 +5,7 @@ const Website = () => {
     return (
         <div style={style}>
             <p>
-                I occasionally make music. In this one, I played keyboard, bass, and guitar,
-                and programmed the drums in GarageBand.
+                This website's repository is <a href='https://github.com/robertoloja/Personal-Website'>here</a>.
             </p>
         </div>
     )

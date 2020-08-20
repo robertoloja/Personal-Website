@@ -85,9 +85,10 @@ const SmartHive = () => {
                 paddingTop: '10px',
                 margin: '0 auto',
                 borderRadius: '5px',
+                background: 'rgba(30, 30, 30, 0.5)',
             }}/>
 
-            <p style={{width: '100%', backgroundColor: 'rgba(30, 30, 30, 0.5'}}>
+            <p style={{width: '100%'}}>
                 When connectivity was available, the NodeJS server uploaded all new readings to
                 the remote Firebase instance, making it available to the Android app.
             </p>

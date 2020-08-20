@@ -17,9 +17,8 @@ class Main extends React.Component {
                          className={`${this.props.article === 'about_me' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`}
                          style={{display: 'none'}}>
                     <h2 className="major">About Me</h2>
-                    <span className="image main"><img src="/static/images/pic01.jpg" alt=""/></span>
 
-                    <AboutMe/>
+                    <AboutMe />
 
                     {close}
                 </article>
@@ -29,7 +28,7 @@ class Main extends React.Component {
                          style={{display: 'none'}}>
                     <h2 className="major">Projects</h2>
 
-                    <Projects/>
+                    <Projects />
 
                     {close}
                 </article>
@@ -39,7 +38,7 @@ class Main extends React.Component {
                          style={{display: 'none'}}>
                     <h2 className="major">Contact</h2>
 
-                    <ContactForm/>
+                    <ContactForm />
 
                     {close}
                 </article>
