@@ -72,20 +72,19 @@ const SmartHive = () => {
                 storing the running count, along with other sensor readings, in a local MongoDB
                 instance.
             </p>
-            <div>
-                <img src='/static/images/SmartHive-SystemDiagram.svg' style={{
-                    width: '50%',
-                    float: 'left',
-                    padding: '40px',
-                    paddingTop: '10px',
-                    margin: 0,
-                    borderRadius: '5px',
-                }}/>
-                <p style={{padding: '70px 0', margin: '20px', backgroundColor: 'rgba(30, 30, 30, 0.5'}}>
-                    When connectivity was available, the NodeJS server uploaded all new readings to
-                    the remote Firebase instance, making it available to the Android app.
-                </p>
-            </div>
+
+            <img src='/static/images/SmartHive-SystemDiagram.svg' style={{
+                width: '100%',
+                padding: '40px',
+                paddingTop: '10px',
+                margin: '0 auto',
+                borderRadius: '5px',
+            }}/>
+
+            <p style={{width: '100%', backgroundColor: 'rgba(30, 30, 30, 0.5'}}>
+                When connectivity was available, the NodeJS server uploaded all new readings to
+                the remote Firebase instance, making it available to the Android app.
+            </p>
         </div>
     )
 }
