@@ -3,7 +3,7 @@ import ThumbnailGallery from '../ThumbnailGallery/ThumbnailGallery'
 
 const SmartHive = () => {
     return (
-        <div style={{ padding: '40px' }}>
+        <div style={{padding: '40px'}}>
             <p>
                 Bee populations have been in decline since the late 1990's
                 (citation needed) and, since pollination by bees accounts
@@ -20,7 +20,7 @@ const SmartHive = () => {
                     Collective</a>). Thus, urban hives are generally more well tended.
             </p>
 
-            <p>
+            <p style={{marginBottom: '-20px'}}>
                 But as the global decline of bee populations accelerates, and the time
                 investment of training beekepers remains constant, it becomes important
                 to increase existing beekeepers' reach. SmartHive was designed as a tool
@@ -34,16 +34,13 @@ const SmartHive = () => {
                             'A laser-cut acryllic housing was designed for the weight sensors and chosen computing platform, ' +
                             'a Raspberry Pi. This would support the weight of a standard Langstroth hive, allowing for ' +
                             'remote measurement of a hive\'s weight.',
-                            'As bees do not hibernate, but do stop making honey, they rely on existing honey stores ' +
-                            'to survive until Spring. Tracking hive weight over winter allows for early identification ' +
-                            'of hives at-risk of starving, which can be rescued in greenhouses.'
                         ]
                     },
                     {
                         image_filename: 'smarthive',
                         image_caption: [
                             'The finished prototype included ingress/egress sensors for estimating hive population changes, ' +
-                            'as well as temperature and humidity sensors.',
+                            'as well as temperature, humidity, and weight sensors.',
                             'Temperature sensors were located along four of the hive\'s eight corners. By measuring temperature ' +
                             'differences along the axes defined by these sensor locations, we could estimate the position of a hive ' +
                             'cluster during Winter. The closer to an outter wall the cluster, the more at-risk the hive.'
@@ -51,7 +48,12 @@ const SmartHive = () => {
                     },
                     {
                         image_filename: 'HiveInfo',
-                        image_caption: ['The Android app provided near real-time information on individual hives.']
+                        image_caption: [
+                            'The Android app provided near real-time information on individual hives.' +
+                            'As bees do not hibernate, but do stop making honey, they rely on existing honey ' +
+                            'stores to survive until Spring. Tracking hive weight over winter allows for early ' +
+                            'identification of hives at-risk of starving, which can be rescued in greenhouses.'
+                        ]
                     },
                     {
                         image_filename: 'HiveList',
@@ -63,14 +65,27 @@ const SmartHive = () => {
                     },
                 ]}
             />
-            <img src='/static/images/SmartHive-SystemDiagram.svg' style={{
-                width: '100%',
-                padding: '40px',
-                paddingTop: '10px',
-                margin: 0,
-                backgroundColor: 'rgba(30, 30, 30, 0.5)',
-                borderRadius: '5px',
-            }}/>
+            <p style={{marginTop: '-80px'}}>
+                The system consists of a RaspberryPi running Python scripts that periodically query
+                the weight, temperature, and humidity sensors. Asynchronously, a state-machine
+                script keeps count of population changes (i.e. ingress and egress), periodically
+                storing the running count, along with other sensor readings, in a local MongoDB
+                instance.
+            </p>
+            <div>
+                <img src='/static/images/SmartHive-SystemDiagram.svg' style={{
+                    width: '50%',
+                    float: 'left',
+                    padding: '40px',
+                    paddingTop: '10px',
+                    margin: 0,
+                    borderRadius: '5px',
+                }}/>
+                <p style={{padding: '70px 0', margin: '20px', backgroundColor: 'rgba(30, 30, 30, 0.5'}}>
+                    When connectivity was available, the NodeJS server uploaded all new readings to
+                    the remote Firebase instance, making it available to the Android app.
+                </p>
+            </div>
         </div>
     )
 }

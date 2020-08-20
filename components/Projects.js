@@ -14,6 +14,7 @@ const Projects = () => {
         padding: '10px',
         marginBottom: '-20px',
         cursor: 'pointer',
+        transition: 'color .2s ease-in-out, background-color .2s ease-in-out,border-bottom-color .2s ease-in-out',
     }
 
     const firstTabStyle = (() => {

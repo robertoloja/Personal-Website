@@ -84,7 +84,7 @@ class IndexPage extends React.Component {
                                 src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
                         </script>
                         <script type="text/javascript">
-                            (function (){
+                            (function() {
                             emailjs.init("user_grrrmewkPIwj6Xm5SsgKd")
                         })
                         ();
