@@ -4,17 +4,19 @@ import Floater from 'react-floater'
 
 const SmartHive = () => {
     return (
-        <div style={{padding: '40px'}}>
+        <div style={{padding: '40px', color: '#ddd'}}>
             <p>
                 Bee populations have been in decline since the late 1990's and,
                 since <a href='#'><Floater showCloseButton={true}
-                                     content={
-                                         <a href='http://archive-ouverte.unige.ch/unige:32251'>
-                                             Kluser, S., Neumann, P., Chauzat, M., Pettis, J. S., Peduzzi, P., Witt, R.,
-                                             ... Theuri, M. (2010). Global honey bee colony disorders and other threats
-                                             to insect pollinators.
-                                         </a>
-                                     }>bees pollinate as many as 75% of all plant species</Floater></a>,
+                                           content={
+                                               <a href='http://archive-ouverte.unige.ch/unige:32251'>
+                                                   Kluser, S., Neumann, P., Chauzat, M., Pettis, J. S., Peduzzi, P.,
+                                                   Witt, R.,
+                                                   ... Theuri, M. (2010). Global honey bee colony disorders and other
+                                                   threats
+                                                   to insect pollinators.
+                                               </a>
+                                           }>bees pollinate as many as 75% of all plant species</Floater></a>,
                 the decline in bee populations has direct consequences to humans.
             </p>
 
@@ -55,10 +57,10 @@ const SmartHive = () => {
                     {
                         image_filename: 'HiveInfo',
                         image_caption: [
-                            'The Android app provided near real-time information on individual hives.' +
+                            'The Android app provided near real-time information on individual hives. ' +
                             'As bees do not hibernate, but do stop making honey, they rely on existing honey ' +
-                            'stores to survive until Spring. Tracking hive weight over winter allows for early ' +
-                            'identification of hives at-risk of starving, which can be rescued in greenhouses.'
+                            'stores to survive until Spring. Tracking hive weight over Winter allows for early ' +
+                            'identification of hives at-risk of starving, which can then be rescued in greenhouses.'
                         ]
                     },
                     {
@@ -79,14 +81,19 @@ const SmartHive = () => {
                 instance.
             </p>
 
-            <img src='/static/images/SmartHive-SystemDiagram.svg' style={{
-                width: '100%',
-                padding: '40px',
-                paddingTop: '10px',
-                margin: '0 auto',
-                borderRadius: '5px',
-                background: 'rgba(30, 30, 30, 0.5)',
-            }}/>
+            <figure>
+                <img src='/static/images/SmartHive-SystemDiagram.svg'
+                     style={{
+                         width: '100%',
+                         paddingTop: '10px',
+                         margin: '0 auto',
+                         borderRadius: '5px',
+                         background: 'rgba(30, 30, 30, 0.5)',
+                         boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
+                     }}
+                />
+                <figcaption style={{fontSize: 'small', textAlign: 'center', paddingBottom: '20px'}}>SmartHive system diagram.</figcaption>
+            </figure>
 
             <p style={{width: '100%'}}>
                 When connectivity was available, the NodeJS server uploaded all new readings to

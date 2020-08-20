@@ -17,9 +17,6 @@ const ContactForm = () => {
             });
     }
 
-    let emailError = false
-    let emailSuccess = false
-
     return (
         <div style={{width: '80%'}}>
             <form onSubmit={sendEmail}>

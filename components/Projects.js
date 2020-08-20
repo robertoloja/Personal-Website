@@ -37,7 +37,7 @@ const Projects = () => {
             margin: 0,
             padding: 0,
         }}
-              disabledTabClassName='disabled_project_tab'>
+              selectedTabClassName="selected_tab">
             <TabList style={{
                 listStyleType: 'none',
                 margin: 0,

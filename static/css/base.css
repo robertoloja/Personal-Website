@@ -1,0 +1,9 @@
+.selected_tab {
+    background-color: red;
+}
+
+figure figcaption {
+    font-size: smaller;
+    padding-left: 10%;
+    padding-bottom: 20px;
+}
