@@ -15,7 +15,7 @@ const BookInventory = () => {
                 borderRadius: '5px',
                 boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
             }}>
-                <iframe src="http://rholoj.pythonanywhere.com/"
+                <iframe src="https://rholoj.pythonanywhere.com/"
                         title="BookInventory"
                         style={{
                             width: '700px',
