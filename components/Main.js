@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import Projects from './Projects'
-import AboutMe from './AboutMe'
-import ContactForm from './ContactForm'
+import Projects from './Articles/Projects'
+import AboutMe from './Articles/AboutMe'
+import ContactForm from './Articles/ContactForm'
 import React from "react";
 
 class Main extends React.Component {

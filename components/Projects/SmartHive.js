@@ -23,9 +23,8 @@ const SmartHive = () => {
             <p>
                 Counter-intuitively, urban bee populations have declined slower
                 than non-urban bees, a fact explained by the higher number of
-                beekeepers residing in cities (e.g.
-                <a href='http://torontobeekeeping.ca/'> The Toronto Beekepers
-                    Collective</a>). Thus, urban hives are generally more well tended.
+                beekeepers residing in cities (e.g. <a href='http://torontobeekeeping.ca/'>
+                The Toronto Beekepers Collective</a>). Thus, urban hives are generally more well tended.
             </p>
 
             <p>
@@ -81,7 +80,7 @@ const SmartHive = () => {
                 instance.
             </p>
 
-            <figure>
+            <figure style={{margin: '0 auto', width: '80%'}}>
                 <img src='/static/images/SmartHive-SystemDiagram.svg'
                      style={{
                          width: '100%',

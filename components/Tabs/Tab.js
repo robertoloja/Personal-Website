@@ -30,9 +30,8 @@ class Tab extends Component {
 
         function changeBackground(e) {
             e.target.style.background = e.target.style.background = 'linear-gradient(180deg,' +
-                                                                    'rgba(204,204,204,0.1) 0%,' +
-                                                                    'rgba(190,190,190,0.1) 20%,' +
-                                                                    'rgba(20,20,20,0.1) 100%)'
+                                                                    'rgba(100, 100, 100, 0.1) 30%,' +
+                                                                    'rgba(20, 20, 20, 0.4) 100%)'
         }
 
         function restoreBackground(e) {
@@ -50,8 +49,9 @@ class Tab extends Component {
                     float: 'left',
                     textAlign: 'center',
                     padding: '10px',
-                    paddingLeft: '-1px',
-                    paddingRight: '-1px',
+                    marginBottom: '-7px',
+                    marginLeft: '4px',
+                    marginRight: '4px',
                     cursor: 'pointer',
                     transition: 'color .2s ease-in-out, background-color .2s ease-in-out,border-bottom-color .2s ease-in-out',
                 }}
@@ -64,13 +64,12 @@ class Tab extends Component {
                 <style dangerouslySetInnerHTML={{
                     __html: `
                       .tab-list-active { 
-                        background: rgb(50, 50, 50,0.1);
+                        color: '#ddd';
+                        box-shadow: 2px 2px rgba(0.5, 0.5, 0.5, 0.2);
+                        background: rgb(20, 20, 20, 0.2);
                         background: linear-gradient(180deg, 
-                                    rgba(100, 100, 100, 0.1) 0%, 
-                                    rgba(100, 100, 100, 0.1) 20%, 
-                                    rgba(20, 20, 20, 0.1) 100%);
-                        box-shadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)';
-                        text-shadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)';
+                                    rgba(100, 100, 100, 0.1) 30%, 
+                                    rgba(20, 20, 20, 0.4) 100%);
                       }
                 `
                 }}/>

@@ -55,7 +55,7 @@ class Tabs extends Component {
                     })}
                 </ol>
                 <div className="tab-content" style={{
-                    background: 'rgba(20,20,20,0.2)',
+                    background: 'rgba(20, 20, 20, 0.2)',
                     borderRadius: '5px',
                     boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
                 }}>

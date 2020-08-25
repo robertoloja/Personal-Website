@@ -17,6 +17,13 @@ export default class ThumbnailGallery extends Component {
         this.setState({activeIndex: newActiveIndex})
     }
 
+    componentDidMount() {
+        this.props.images.forEach((image) => {
+            const img = new Image();
+            img.src = image.image_filename;
+        });
+    }
+
     render() {
         return (
             <div style={thumbnailGalleryStyles}>
