@@ -6,8 +6,12 @@ import Website from './Projects/Website'
 import Tabs from './Tabs/Tabs'
 
 const Projects = () =>
-    <Tabs>
-        <div label="SmartHive">
+    <Tabs style={{transitionProperty: 'width height', transitionDuration: '0.5s'}}>
+        <div label="SmartHive" style={{
+            transitionProperty: 'width height',
+            transitionDuration: '0.5s',
+            transitionTimingFunction: 'ease-in-out'
+        }}>
             <SmartHive/>
         </div>
 

@@ -38,7 +38,8 @@ class Tabs extends Component {
                     margin: 0,
                     padding: 0,
                     paddingLeft: '40px',
-                    overflow: 'hidden'}}>
+                    overflow: 'hidden',
+                }}>
 
                     {children.map((child) => {
                         const { label } = child.props;

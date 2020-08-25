@@ -68,7 +68,7 @@ class Tab extends Component {
                         background: linear-gradient(180deg, 
                                     rgba(100, 100, 100, 0.1) 0%, 
                                     rgba(100, 100, 100, 0.1) 20%, 
-                                    rgba(20,20,20,0.1) 100%);
+                                    rgba(20, 20, 20, 0.1) 100%);
                         box-shadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)';
                         text-shadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)';
                       }
