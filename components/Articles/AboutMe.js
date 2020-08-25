@@ -11,7 +11,7 @@ const AboutMe = () => {
 const styles = {
     height: '100%',
     width: '25%',
-    position: 'relative'
+    position: 'relative',
 }
 
 export default AboutMe
