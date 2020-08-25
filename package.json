@@ -32,7 +32,9 @@
     "react-floater": "^0.7.2",
     "react-google-recaptcha": "^2.1.0",
     "react-player": "^2.6.0",
-    "react-tabs": "^3.1.1",
     "sass-loader": "^7.1.0"
+  },
+  "devDependencies": {
+    "prop-types": "^15.7.2"
   }
 }
