@@ -8,19 +8,19 @@ import Tabs from '../Tabs/Tabs'
 const Projects = () =>
     <Tabs>
         <div label="SmartHive">
-            <SmartHive/>
+            <SmartHive />
         </div>
 
         <div label="Book Inventory">
-            <BookInventory/>
+            <BookInventory />
         </div>
 
         <div label="This Website">
-            <Website/>
+            <Website />
         </div>
 
         <div label="Other">
-            <Other/>
+            <Other />
         </div>
     </Tabs>
 

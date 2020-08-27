@@ -37,8 +37,11 @@ class Tabs extends Component {
                     listStyleType: 'none',
                     margin: 0,
                     padding: 0,
-                    paddingLeft: '40px',
+                    paddingLeft: '5%',
                     overflow: 'hidden',
+                    display: 'flex',
+                    overflowX: 'auto',
+                    WebkitOverflowScrolling: 'touch',
                 }}>
 
                     {children.map((child) => {

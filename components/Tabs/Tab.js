@@ -64,6 +64,7 @@ class Tab extends Component {
                 <style dangerouslySetInnerHTML={{
                     __html: `
                       .tab-list-active { 
+                        cursor: default;
                         color: '#ddd';
                         box-shadow: 2px 2px rgba(0.5, 0.5, 0.5, 0.2);
                         background: rgb(20, 20, 20, 0.2);

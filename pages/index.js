@@ -79,16 +79,13 @@ class IndexPage extends React.Component {
                         <title>Roberto Loja</title>
                         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i"
                               rel="stylesheet"/>
-                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                        <script src="https://www.google.com/recaptcha/api.js" async defer />
                         <script type="text/javascript"
-                                src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-                        </script>
+                                src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js" />
                         <script type="text/javascript">
-                            (function() {
-                            emailjs.init("user_grrrmewkPIwj6Xm5SsgKd")
-                        })
-                        ();
+                            (function(){emailjs.init("user_grrrmewkPIwj6Xm5SsgKd")})();
                         </script>
+                        <meta name="viewport" content="width=device-width, initial-scale=1" />
                     </Head>
 
                     <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
