@@ -29,9 +29,9 @@ class Tab extends Component {
         }
 
         function changeBackground(e) {
-            e.target.style.background = e.target.style.background = 'linear-gradient(180deg,' +
-                                                                    'rgba(100, 100, 100, 0.1) 30%,' +
-                                                                    'rgba(20, 20, 20, 0.4) 100%)'
+            e.target.style.background = 'linear-gradient(180deg,' +
+                'rgba(100, 100, 100, 0.1) 30%,' +
+                'rgba(20, 20, 20, 0.4) 100%)'
         }
 
         function restoreBackground(e) {
@@ -65,12 +65,14 @@ class Tab extends Component {
                     __html: `
                       .tab-list-active { 
                         cursor: default;
-                        color: '#ddd';
+                        color: '#fff';
                         box-shadow: 2px 2px rgba(0.5, 0.5, 0.5, 0.2);
                         background: rgb(20, 20, 20, 0.2);
                         background: linear-gradient(180deg, 
                                     rgba(100, 100, 100, 0.1) 30%, 
                                     rgba(20, 20, 20, 0.4) 100%);
+                        font-weight: 500;
+                        text-shadow: 1px 1px rgba(0.5, 0.5, 0.5, 0.5);
                       }
                 `
                 }}/>
