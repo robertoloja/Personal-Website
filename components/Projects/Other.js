@@ -6,7 +6,11 @@ import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 const Other = () => {
     return (
         <div style={style}>
-            <h3>Book Inventory<a href="https://www.github.com/robertoloja/bookInventory"><FontAwesomeIcon icon={faGithub}/></a></h3>
+            <h3>Book Inventory
+                <a href="https://www.github.com/robertoloja/bookInventory" style={{marginLeft: '10px'}}>
+                    <FontAwesomeIcon icon={faGithub}/>
+                </a>
+            </h3>
             <p>
                 This was a piece of bespoke home software for an elderly friend beset by an overlarge book collection.
                 The running application is hosted <a href='https://rholoj.pythonanywhere.com/'>here</a>. It is a Django
@@ -31,30 +35,48 @@ const Other = () => {
                 if it fits its purpose and solves the original problem, it is likely good enough to call done.
             </p>
 
-            <h3>Fito<a href="https://www.github.com/robertoloja/fito"><FontAwesomeIcon icon={faGithub}/></a></h3>
+            <h3 style={{marginTop: '60px'}}>
+                Fito
+                <a href="https://github.com/robertoloja/fito/blob/master/index.js" style={{marginLeft: '10px'}}>
+                    <FontAwesomeIcon icon={faGithub}/>
+                </a>
+            </h3>
             <p>
                 This is a Discord bot for my Meetup group, Formula 1 in Toronto, which has
                 become online only in the age of COVID. It is mostly a simple interface for
                 the fantastic <a href="http://ergast.com/mrd/">Ergast API</a>, intended to
-                facilitate discussion and minimize time spent arguing about facts.
+                facilitate discussion and minimize time spent arguing about facts. As with
+                everyone else, we're trying to maintain the sociability of our group, given
+                the limitations of our times, which has increased our reliance on software.
             </p>
-            <h3>Music</h3>
+            <p>
+                Though this is a tiny project, I've included it here as an accurate representation of the type
+                of code I tend to write nowadays, which leans more towards functions than objects.
+            </p>
+            <h3 style={{marginTop: '60px'}}>Music</h3>
             <p>
                 I occasionally make music. In this one, I played keyboard, bass, and guitar,
-                and programmed the drums in GarageBand. It's an original song, but will probably not have
-                an end any time soon.
+                and programmed the drums in GarageBand, as well as handling the recording, editing, and mixing.
+                It's an original song, but will probably not have an end any time soon.
             </p>
             <ReactPlayer
                 url='https://soundcloud.com/roberto-loja-488022066/riff1-2020-07-08-1017-am'
-                width='25%'
-                height='80px'
+                width='400px'
+                height='100px'
+                style={{margin: 'auto', marginBottom: '30px'}}
             />
+            <p>
+                Unlike with software, I don't feel an especially strong compunction to finish pieces of music.
+                There comes a point where continuing to work on a song is exhausting, unrewarding, and best left to
+                professionals.
+            </p>
         </div>
     )
 }
 
 const style = {
     padding: '40px',
+    textAlign: 'justify'
 }
 
 export default Other

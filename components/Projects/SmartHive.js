@@ -4,7 +4,7 @@ import Floater from 'react-floater'
 
 const SmartHive = () => {
     return (
-        <div style={{padding: '40px', color: '#ddd'}}>
+        <div style={{padding: '40px', color: '#ddd', textAlign: 'justify'}}>
             <p>
                 Bee populations have been in decline since the late 1990's and,
                 since <a><Floater showCloseButton={true}
