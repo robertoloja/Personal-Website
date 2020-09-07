@@ -19,7 +19,8 @@ const Thumbnail = ({imgSrc, handleClick, index}) => {
 const styles = {
     height: '100%',
     width: '25%',
-    position: 'relative'
+    position: 'relative',
+    flex: 1,
 }
 
 export default Thumbnail

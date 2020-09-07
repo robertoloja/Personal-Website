@@ -4,7 +4,7 @@ import Floater from 'react-floater'
 
 const SmartHive = () => {
     return (
-        <div style={{padding: '40px', color: '#ddd', textAlign: 'justify'}}>
+        <div style={{padding: '1.5rem', color: '#ddd', textAlign: 'justify'}}>
             <p>
                 Bee populations have been in decline since the late 1990's and,
                 since bees pollinate as many as <a><Floater showCloseButton={true}
@@ -34,6 +34,7 @@ const SmartHive = () => {
                 for remote monitoring of beehives' key health indicators.
             </p>
             <ThumbnailGallery
+                style={{width: '100%'}}
                 images={[
                     {
                         image_filename: 'housing-render',
@@ -72,7 +73,7 @@ const SmartHive = () => {
                     },
                 ]}
             />
-            <p style={{marginTop: '-80px'}}>
+            <p style={{marginTop: '-2rem'}}>
                 The system consists of a RaspberryPi running Python scripts that periodically query
                 the weight, temperature, and humidity sensors. Asynchronously, a state-machine
                 script keeps count of population changes (i.e. ingress and egress), periodically
@@ -84,14 +85,14 @@ const SmartHive = () => {
                 <img src='/static/images/SmartHive-SystemDiagram.svg'
                      style={{
                          width: '100%',
-                         paddingTop: '10px',
+                         paddingTop: '0.5rem',
                          margin: '0 auto',
                          borderRadius: '5px',
                          background: 'rgba(30, 30, 30, 0.5)',
                          boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
                      }}
                 />
-                <figcaption style={{fontSize: 'small', textAlign: 'center', paddingBottom: '20px'}}>SmartHive system diagram.</figcaption>
+                <figcaption style={{fontSize: 'small', textAlign: 'center', paddingBottom: '1rem'}}>SmartHive system diagram.</figcaption>
             </figure>
 
             <p style={{width: '100%'}}>

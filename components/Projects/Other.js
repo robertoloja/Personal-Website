@@ -42,22 +42,21 @@ const Other = () => {
                 </a>
             </h3>
             <p>
-                This is a Discord bot for my Meetup group, Formula 1 in Toronto, which has
-                become online only in the age of COVID. It is mostly a simple interface for
-                the fantastic <a href="http://ergast.com/mrd/">Ergast API</a>, intended to
-                facilitate discussion and minimize time spent arguing about facts. As with
-                everyone else, we're trying to maintain the sociability of our group, given
-                the limitations of our times, which has increased our reliance on software.
+                This is a Discord bot for my Meetup group, Formula 1 in Toronto, which has become online-only in the age
+                of COVID. It is an interface for the fantastic <a href="http://ergast.com/mrd/">Ergast API</a>, intended
+                to facilitate discussion and minimize time spent arguing about facts. As with everyone else, we're
+                trying to maintain the sociability of our group, given the limitations of our times, which has increased
+                our reliance on software.
             </p>
             <p>
-                Though this is a tiny project, I've included it here as an accurate representation of the type
-                of code I tend to write nowadays, which leans more towards functions than objects.
+                Though this is a tiny project, I've included it here as an accurate representation of the type of code I
+                tend to write nowadays, leaning more towards functions than objects.
             </p>
             <h3 style={{marginTop: '60px'}}>Music</h3>
             <p>
-                I occasionally make music. In this one, I played keyboard, bass, and guitar,
-                and programmed the drums in GarageBand, as well as handling the recording, editing, and mixing.
-                It's an original song, but will probably not have an end any time soon.
+                I occasionally make music. In this one, I played keyboard, bass, and guitar, and programmed the drums in
+                GarageBand, as well as handling the recording, editing, and mixing. It's an original song, but will
+                probably not have an end any time soon.
             </p>
             <ReactPlayer
                 url='https://soundcloud.com/roberto-loja-488022066/riff1-2020-07-08-1017-am'
@@ -66,8 +65,8 @@ const Other = () => {
                 style={{margin: 'auto', marginBottom: '30px'}}
             />
             <p>
-                Unlike with software, I don't feel an especially strong compunction to finish pieces of music.
-                There comes a point where continuing to work on a song is exhausting, unrewarding, and best left to
+                Unlike with software, I don't feel an especially strong compunction to finish pieces of music. There
+                comes a point where continuing to work on a song is exhausting, unrewarding, and best left to
                 professionals.
             </p>
         </div>

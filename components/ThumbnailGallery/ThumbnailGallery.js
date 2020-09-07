@@ -29,7 +29,12 @@ export default class ThumbnailGallery extends Component {
             <div style={thumbnailGalleryStyles}>
 
                 {/* Left */}
-                <div style={{flex: 1}}>
+                <div style={{
+                    flex: 1,
+                    marginLeft: '-1.5rem',
+                    marginTop: '-1rem',
+                    marginRight: 0,
+                }}>
                     <ActiveThumbnailWindow
                         activeIndex={this.state.activeIndex}
                         image_filenames={this.state.image_filenames}
@@ -44,18 +49,19 @@ export default class ThumbnailGallery extends Component {
                 {/* Right */}
                 <div style={{
                     flex: 1,
-                    padding: '50px',
+                    padding: '1.5rem',
                     color: 'white',
                 }}>
                     <div style={{
                         background: 'rgba(30, 30, 30, 0.5)',
                         borderRadius: '5px',
-                        padding: '40px',
-                        paddingBottom: '20px',
-                        verticalAlign: 'text-top',
+                        verticalAlign: 'middle',
                         boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
                         textAlign: 'justify',
-                        color: '#ddd'
+                        color: '#ddd',
+                        margin: 'auto -2rem',
+                        padding: '1.5rem',
+                        paddingBottom: '0.1rem',
                     }}>
                         {this.state.image_captions[this.state.activeIndex].map((x) => <p key={x}>{x}</p>)}
                     </div>
@@ -71,7 +77,7 @@ const thumbnailGalleryStyles = {
     width: '100%',
     margin: '0 auto',
     paddingTop: 0,
-    paddingBottom: '100px',
+    paddingBottom: '2rem',
     display: 'flex',
     borderRadius: '5px',
     verticalAlign: 'text-top'

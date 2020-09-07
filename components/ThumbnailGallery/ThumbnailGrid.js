@@ -19,11 +19,12 @@ const ThumbnailGrid = ({image_filenames, handleClick}) => {
 }
 
 const styles = {
-    height: '25%',
+    height: '5rem',
     width: '100%',
     display: 'flex',
     flexWrap: 'wrap',
-    padding: '5px'
+    flexDirection: 'row',
+    justifyContent: 'center',
 }
 
 export default ThumbnailGrid

@@ -5,7 +5,10 @@ import Website from '../Projects/Website'
 import Tabs from '../Tabs/Tabs'
 
 const Projects = () =>
-    <Tabs>
+    <Tabs style={{
+        margin: '-2rem',
+        padding: 0,
+    }}>
         <div label="SmartHive">
             <SmartHive />
         </div>

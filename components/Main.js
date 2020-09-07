@@ -27,7 +27,11 @@ class Main extends React.Component {
                 </article>
 
                 <article id="projects"
-                         style={{display: 'none'}}
+                         style={{
+                             display: 'none',
+                             padding: '1rem',
+                             margin: 0,
+                         }}
                          className={`
                             ${this.props.article === 'projects' ? 'active' : ''} 
                             ${this.props.articleTimeout ? 'timeout' : ''}
@@ -47,7 +51,6 @@ class Main extends React.Component {
                     <ContactForm />
                     {close}
                 </article>
-
             </div>
         )
     }
