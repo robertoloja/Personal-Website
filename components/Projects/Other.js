@@ -61,7 +61,7 @@ const Other = () => {
             </p>
             <ReactPlayer
                 url='https://soundcloud.com/roberto-loja-488022066/riff1-2020-07-08-1017-am'
-                width='400px'
+                width='50%'
                 height='100px'
                 style={{margin: 'auto', marginBottom: '30px'}}
             />

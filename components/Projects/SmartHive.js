@@ -7,7 +7,7 @@ const SmartHive = () => {
         <div style={{padding: '40px', color: '#ddd', textAlign: 'justify'}}>
             <p>
                 Bee populations have been in decline since the late 1990's and,
-                since <a><Floater showCloseButton={true}
+                since bees pollinate as many as <a><Floater showCloseButton={true}
                                            content={
                                                <a>
                                                    Kluser, S., Neumann, P., Chauzat, M., Pettis, J. S., Peduzzi, P.,
@@ -16,7 +16,7 @@ const SmartHive = () => {
                                                    threats
                                                    to insect pollinators.
                                                </a>
-                                           }>bees pollinate as many as 75% of all plant species</Floater></a>,
+                                           }>75% of all plant species</Floater></a>,
                 the decline in bee populations has direct consequences to humans.
             </p>
 
