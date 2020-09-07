@@ -32,6 +32,7 @@
     "react-floater": "^0.7.2",
     "react-google-recaptcha": "^2.1.0",
     "react-player": "^2.6.0",
+    "react-thumbnail-gallery": "^2.0.2",
     "sass-loader": "^7.1.0"
   },
   "devDependencies": {

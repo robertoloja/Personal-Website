@@ -53,7 +53,7 @@ export default class ThumbnailGallery extends Component {
                     color: 'white',
                 }}>
                     <div style={{
-                        background: 'rgba(30, 30, 30, 0.5)',
+                        background: 'rgba(150, 150, 200, 0.2)',
                         borderRadius: '5px',
                         verticalAlign: 'middle',
                         boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
