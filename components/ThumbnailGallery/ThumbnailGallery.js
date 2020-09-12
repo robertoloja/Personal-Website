@@ -26,30 +26,28 @@ export default class ThumbnailGallery extends Component {
 
     render() {
         return (
-            <div style={thumbnailGalleryStyles}>
+            <div>
+                <div style={thumbnailGalleryStyles}>
+                    <div style={{
+                        flex: 1,
+                        marginTop: '-1rem',
+                    }}>
+                        <ActiveThumbnailWindow
+                            activeIndex={this.state.activeIndex}
+                            image_filenames={this.state.image_filenames}
+                        />
 
-                {/* Left */}
-                <div style={{
-                    flex: 1,
-                    marginLeft: '-1.5rem',
-                    marginTop: '-1rem',
-                    marginRight: 0,
-                }}>
-                    <ActiveThumbnailWindow
-                        activeIndex={this.state.activeIndex}
-                        image_filenames={this.state.image_filenames}
-                    />
-
-                    <ThumbnailGrid
-                        image_filenames={this.state.image_filenames}
-                        handleClick={this.handleClick}
-                    />
+                        <ThumbnailGrid
+                            image_filenames={this.state.image_filenames}
+                            handleClick={this.handleClick}
+                        />
+                    </div>
                 </div>
 
-                {/* Right */}
                 <div style={{
                     flex: 1,
                     padding: '1.5rem',
+                    paddingTop: 0,
                     color: 'white',
                 }}>
                     <div style={{
@@ -59,8 +57,9 @@ export default class ThumbnailGallery extends Component {
                         boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
                         textAlign: 'justify',
                         color: '#ddd',
-                        margin: 'auto -2rem',
+                        marginTop: 0,
                         padding: '1.5rem',
+                        oaddingTop: 0,
                         paddingBottom: '0.1rem',
                     }}>
                         {this.state.image_captions[this.state.activeIndex].map((x) => <p key={x}>{x}</p>)}
