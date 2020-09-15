@@ -17,9 +17,6 @@ const Header = (props) => (
         <nav>
             <ul>
                 <li><a href="#" onClick={() => {
-                    props.onOpenArticle('about_me')
-                }}>About Me</a></li>
-                <li><a href="#" onClick={() => {
                     props.onOpenArticle('projects')
                 }}>Projects</a></li>
                 <li><a href="#" onClick={() => {

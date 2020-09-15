@@ -15,17 +15,6 @@ class Main extends React.Component {
             <div id="main"
                  style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
 
-                <article id="about_me"
-                         style={{display: 'none'}}
-                         className={`
-                             ${this.props.article === 'about_me' ? 'active' : ''} 
-                             ${this.props.articleTimeout ? 'timeout' : ''}
-                         `}>
-                    <h2 className="major">About Me</h2>
-                    <AboutMe />
-                    {close}
-                </article>
-
                 <article id="projects"
                          style={{
                              display: 'none',
