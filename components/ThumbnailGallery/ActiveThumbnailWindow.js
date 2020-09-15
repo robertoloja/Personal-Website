@@ -6,7 +6,7 @@ const ActiveThumbnailWindow = ({image_filenames, activeIndex}) => {
             <img
                 src={'/static/images/' + image_filenames[activeIndex] + '.png'}
                 style={{
-                    maxHeight: '100%',
+                    maxHeight: '30rem',
                     maxWidth: '95%',
                     margin: 'auto',
                     padding: '20px',

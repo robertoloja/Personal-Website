@@ -59,10 +59,16 @@ export default class ThumbnailGallery extends Component {
                         color: '#ddd',
                         marginTop: 0,
                         padding: '1.5rem',
-                        oaddingTop: 0,
+                        paddingTop: 0,
                         paddingBottom: '0.1rem',
                     }}>
-                        {this.state.image_captions[this.state.activeIndex].map((x) => <p key={x}>{x}</p>)}
+                        {this.state
+                             .image_captions[this.state.activeIndex]
+                             .map(x =>
+                                 <div style={{ paddingTop: '30px' }}>
+                                     <p key={x}>{x}</p>
+                                 </div>)
+                        }
                     </div>
                 </div>
             </div>
