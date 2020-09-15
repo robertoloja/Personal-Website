@@ -39,7 +39,7 @@ const SmartHive = () => {
                 images={imagesAndDescriptions}
             />
 
-            <p style={{marginTop: '-2rem'}}>
+            <p>
                 The system consists of a RaspberryPi running Python scripts that periodically query
                 the weight, temperature, and humidity sensors. Asynchronously, a state-machine
                 script keeps count of population changes (i.e. ingress and egress), periodically
