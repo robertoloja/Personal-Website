@@ -19,21 +19,19 @@ export default class Post extends Component {
                     <strong style={strongStyle}>{this.state.title}</strong>
                     by {this.state.owner} on {this.state.created.toDateString()}
                 </h3>
-                <p>
-                </p>
-                <p>
-                    {this.state.content}
-                </p>
+                {this.state.content.split('\r\n\r\n').map(paragraph => {
+                    return <p>{paragraph}</p>
+                })}
             </div>
         )
     }
 }
 
 const outterDivStyle = {
-    background: 'rgba(50, 50, 50, 0.1)',
+    background: 'rgba(30, 30, 30, 0.1)',
     border: 'solid black 1px',
     borderRadius: '5px',
-    boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
+    boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.1)',
     padding: '2rem',
     paddingLeft: '3rem',
     marginTop: '2rem',
