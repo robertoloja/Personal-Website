@@ -66,6 +66,7 @@ const stylesheet = `a {
     outline: none;
     text-decoration: none;
     color: blue;
+    padding-left: 3px;
 }
 a:hover {
     border-bottom: 1px solid;
