@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import ReactMarkdown from 'react-markdown';
+
 
 export default class Post extends Component {
     constructor(props) {
@@ -19,9 +21,7 @@ export default class Post extends Component {
                     <strong style={strongStyle}>{this.state.title}</strong>
                     by {this.state.owner} on {this.state.created.toDateString()}
                 </h3>
-                {this.state.content.split('\r\n\r\n').map(paragraph => {
-                    return <p>{paragraph}</p>
-                })}
+                <ReactMarkdown source={this.state.content} />
             </div>
         )
     }
