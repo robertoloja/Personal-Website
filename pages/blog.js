@@ -1,4 +1,5 @@
 import Post from '../components/Blog/Post'
+import Head from "next/head";
 
 const blogApiUrl = 'https://rho-ohr-api.herokuapp.com/'
 
@@ -27,22 +28,34 @@ class BlogPage extends React.Component {
 
     render() {
         const {error, isLoaded, posts} = this.state;
+
         if (error) {
             return <div>Error: {error.message}</div>
         } else if (!isLoaded) {
-            return <div>Loading...</div>
+            return <div>
+                <Head>
+                    <title>Mah Blog</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+                    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet"/>
+                </Head>
+                Loading...
+            </div>
         } else {
             return (
-                <ul>
-                    {posts.map(post => (
-                        <Post title={post.title}
-                              content={post.content}
-                              created={post.created}
-                              owner={post.owner}
-                              key={post.title + post.created}
-                        />
-                    ))}
-                </ul>
+                <div>
+                    <ul>
+                        {posts.map(post => (
+                            <Post title={post.title}
+                                  content={post.content}
+                                  created={post.created}
+                                  owner={post.owner}
+                                  key={post.title + post.created}
+                            />
+                        ))}
+                    </ul>
+                </div>
             )
         }
     }

@@ -11,14 +11,15 @@ export default class Post extends Component {
             owner: props.owner,
         }
     }
+
     render() {
         return (
             <div style={outterDivStyle}>
-                <h3>
-                    {this.state.title}
+                <h3 style={titleStyle}>
+                    <strong style={strongStyle}>{this.state.title}</strong>
+                    by {this.state.owner} on {this.state.created.toDateString()}
                 </h3>
                 <p>
-                    by {this.state.owner}, on {this.state.created.toDateString()}
                 </p>
                 <p>
                     {this.state.content}
@@ -29,10 +30,28 @@ export default class Post extends Component {
 }
 
 const outterDivStyle = {
+    background: 'rgba(50, 50, 50, 0.1)',
     border: 'solid black 1px',
+    borderRadius: '5px',
     boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.2)',
-    padding: '1rem',
-    margin: '2rem',
+    padding: '2rem',
+    paddingLeft: '3rem',
+    marginTop: '2rem',
+    marginLeft: '0',
+    maxWidth: '60%',
+    fontFamily: "'Mukta', sans-serif",
 }
 
+const titleStyle = {
+    paddingLeft: '0',
+    paddingBottom: '0.5rem',
+    fontWeight: 'normal',
+    fontSize: '100%',
+}
 
+const strongStyle = {
+    display: 'block',
+    fontFamily: "'Fira Sans Condensed', sans-serif",
+    fontSize: '130%',
+    fontWeight: 'bold',
+}
