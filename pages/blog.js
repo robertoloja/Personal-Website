@@ -1,5 +1,6 @@
 import Post from '../components/Blog/Post'
 import Head from "next/head";
+import React from "react";
 
 const blogApiUrl = 'https://rho-ohr-api.herokuapp.com/'
 
@@ -22,8 +23,15 @@ class BlogPage extends React.Component {
                         isLoaded: true,
                         error: null
                     });
-                }
-            )
+                })
+            .catch(error => {
+                console.error(error);
+                this.setState({
+                    posts: [],
+                    isLoaded: false,
+                    error: error,
+                })
+            })
     }
 
     render() {
@@ -45,7 +53,9 @@ class BlogPage extends React.Component {
             </div>
         } else {
             return (
-                <div>
+                <div style={{
+                    display: 'grid',
+                }}>
                     <ul>
                         {posts.map(post => (
                             <Post title={post.title}

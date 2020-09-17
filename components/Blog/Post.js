@@ -8,40 +8,61 @@ export default class Post extends Component {
     constructor(props) {
         super(props);
 
-        const separateFootNotes = text => {
-            let message = text.split('{')
-            let newMessage = []
-            let footnotes = []
-
-            message.map((x, i) => {
-                if (x.includes('}')) {
-                    footnotes.push(x.slice(0, x.indexOf('}')))
-
-                    newMessage.push(x.slice(x.indexOf('}') + 1, x.length))
-
-                    // newMessage += [x.replace('}', `[${i}](#footnote-${i})`)]
-                } else {
-                    newMessage.push(x)
-                }
-            })
-
-            return {
-                bodyText: newMessage,
-                footnotes: footnotes,
-            }
-        }
-
         this.state = {
             title: props.title,
-            content: separateFootNotes(props.content),
+            content: this.separateFootNotes(props.content),
             created: new Date(props.created),
             owner: props.owner,
         }
     }
 
+    separateFootNotes(text) {
+        const message = text.split('{')
+        let newMessage = []
+        let footnotes = []
+
+        message.map((x, i) => {
+            if (x.includes('}')) {
+                footnotes.push(x.slice(0, x.indexOf('}')))
+                newMessage.push(x.slice(x.indexOf('}') + 1, x.length))
+            } else {
+                newMessage.push(x)
+            }
+        })
+
+        return {
+            bodyText: newMessage,
+            footnotes: footnotes,
+        }
+    }
+
     render() {
+        const parseFootnotes = (phrase, i) => {
+            if (this.state.content.footnotes[i]) {
+                return (
+                    <span className='mid'
+                          style={{display: 'inline-block'}}
+                          key={i}
+                    >
+                    <ReactMarkdown source={phrase}/>
+                    <a style={footnoteStyle}>
+                        <Floater showCloseButton={true} content={this.state.content.footnotes[i]}>{i + 1}</Floater>
+                    </a>
+                </span>)
+            } else {
+                return (
+                    phrase.split(pilcrow).map((x, i) =>
+                        <span className='mid' key={i}>
+                        <ReactMarkdown source={x}/>
+                        <br/>
+                        <br/>
+                    </span>)
+                )
+            }
+        }
+
         return (
-            <div style={outterDivStyle}>
+            <div style={outerDivStyle} key={this.props.title}>
                 <style dangerouslySetInnerHTML={{
                     __html: `.mid>p { 
                         display: inline
@@ -53,29 +74,13 @@ export default class Post extends Component {
                     by {this.state.owner} on {this.state.created.toDateString()}
                 </h3>
 
-                {this.state.content.bodyText.map((phrase, i) => {
-                    if (this.state.content.footnotes[i]) {
-                        return (<span className='mid'
-                                      style={{display: 'inline-block'}}>
-                            <ReactMarkdown source={phrase}/>
-                            <a style={footnoteStyle}>
-                                <Floater showCloseButton={true}
-                                         content={this.state.content.footnotes[i]}>{i + 1}
-                                </Floater>
-                            </a>
-                        </span>)
-                    } else {
-                        return (
-                            phrase.split(pilcrow).map(x =>
-                                <span className='mid'><ReactMarkdown source={x}/><br /><br /></span>))
-                    }
-                })}
+                {this.state.content.bodyText.map(parseFootnotes)}
             </div>
         )
     }
 }
 
-const outterDivStyle = {
+const outerDivStyle = {
     background: 'rgba(30, 30, 30, 0.1)',
     border: 'solid black 1px',
     borderRadius: '5px',
