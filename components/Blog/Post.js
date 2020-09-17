@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import ReactMarkdown from 'react-markdown';
+import Floater from 'react-floater'
 
 
 export default class Post extends Component {
@@ -14,15 +15,17 @@ export default class Post extends Component {
             message.map((x, i) => {
                 if (x.includes('}')) {
                     footnotes.push(x.slice(0, x.indexOf('}')))
-                    console.log()
-                    newMessage += [x.replace('}', `[${i}](#footnote-${i})`)]
+
+                    newMessage.push(x.slice(x.indexOf('}') + 1, x.length))
+
+                    // newMessage += [x.replace('}', `[${i}](#footnote-${i})`)]
                 } else {
-                    newMessage += x
+                    newMessage.push(x)
                 }
             })
 
             return {
-                bodyText: String(newMessage),
+                bodyText: newMessage,
                 footnotes: footnotes,
             }
         }
@@ -38,19 +41,34 @@ export default class Post extends Component {
     render() {
         return (
             <div style={outterDivStyle}>
+                <style dangerouslySetInnerHTML={{
+                    __html: `.mid>p { 
+                        display: inline
+                      }`
+                }}/>
+
                 <h3 style={titleStyle}>
                     <strong style={strongStyle}>{this.state.title}</strong>
                     by {this.state.owner} on {this.state.created.toDateString()}
                 </h3>
-                <ReactMarkdown source={this.state.content.bodyText}/>
 
-                <ul style={footnoteStyle}>
-                    {this.state.content.footnotes.map((footnote, i) =>
-                        <li id={`footnote-${i}`} key={i}>
-                            <a href='#'>{i + 1}</a>: {footnote}
-                        </li>
-                    )}
-                </ul>
+                {this.state.content.bodyText.map((phrase, i) => {
+                    if (this.state.content.footnotes[i]) {
+                        return (<span className='mid'
+                                      style={{display: 'inline-block'}}>
+                            <ReactMarkdown source={phrase}/>
+                            <a style={footnoteStyle}>
+                                <Floater showCloseButton={true}
+                                         content={this.state.content.footnotes[i]}>{i + 1}
+                                </Floater>
+                            </a>
+                        </span>)
+                    } else {
+                        return (
+                            phrase.split('\r\n\r\n').map(x =>
+                                <span className='mid'><ReactMarkdown source={x}/><br /><br /></span>))
+                    }
+                })}
             </div>
         )
     }
@@ -67,6 +85,7 @@ const outterDivStyle = {
     marginLeft: '0',
     maxWidth: '60%',
     fontFamily: "'Mukta', sans-serif",
+    textAlign: 'justify',
 }
 
 const titleStyle = {
@@ -84,5 +103,5 @@ const strongStyle = {
 }
 
 const footnoteStyle = {
-    listStyleType: 'none',
+    verticalAlign: 'super'
 }

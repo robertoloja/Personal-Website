@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import Projects from './Articles/Projects'
-import AboutMe from './Articles/AboutMe'
 import ContactForm from './Articles/ContactForm'
 import React from "react";
 
@@ -8,8 +7,8 @@ class Main extends React.Component {
     render() {
         let close = <div className="close"
                          onClick={() => {
-                            this.props.onCloseArticle()
-                    }}/>
+                             this.props.onCloseArticle()
+                         }}/>
 
         return (
             <div id="main"
@@ -26,7 +25,7 @@ class Main extends React.Component {
                             ${this.props.articleTimeout ? 'timeout' : ''}
                          `}>
                     <h2 className="major">Projects</h2>
-                    <Projects />
+                    <Projects/>
                     {close}
                 </article>
 
@@ -37,7 +36,7 @@ class Main extends React.Component {
                             ${this.props.articleTimeout ? 'timeout' : ''}
                          `}>
                     <h2 className="major">Contact</h2>
-                    <ContactForm />
+                    <ContactForm/>
                     {close}
                 </article>
             </div>

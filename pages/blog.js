@@ -39,6 +39,7 @@ class BlogPage extends React.Component {
 
                     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet" />
                     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet"/>
+                    <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
                 </Head>
                 Loading...
             </div>
@@ -60,5 +61,15 @@ class BlogPage extends React.Component {
         }
     }
 }
+
+const stylesheet = `a {
+    outline: none;
+    text-decoration: none;
+    color: blue;
+}
+a:hover {
+    border-bottom: 1px solid;
+}`
+
 
 export default BlogPage

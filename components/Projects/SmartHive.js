@@ -9,13 +9,13 @@ const SmartHive = () => {
                 Bee populations have been in decline since the late 1990's and,
                 since bees pollinate as many as <a><Floater showCloseButton={true}
                                            content={
-                                               <a>
+                                               <div>
                                                    Kluser, S., Neumann, P., Chauzat, M., Pettis, J. S., Peduzzi, P.,
                                                    Witt, R.,
                                                    ... Theuri, M. (2010). Global honey bee colony disorders and other
                                                    threats
                                                    to insect pollinators.
-                                               </a>
+                                               </div>
                                            }>75% of all plant species</Floater></a>,
                 the decline in bee populations has direct consequences to humans.
             </p>
