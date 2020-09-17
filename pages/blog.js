@@ -1,3 +1,5 @@
+import Post from '../components/Blog/Post'
+
 const blogApiUrl = 'https://rho-ohr-api.herokuapp.com/'
 
 class BlogPage extends React.Component {
@@ -24,20 +26,21 @@ class BlogPage extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, posts } = this.state;
+        const {error, isLoaded, posts} = this.state;
         if (error) {
             return <div>Error: {error.message}</div>
         } else if (!isLoaded) {
             return <div>Loading...</div>
         } else {
-            console.log("Posts: " + posts)
             return (
                 <ul>
                     {posts.map(post => (
-                        <li key={post.title}>
-                            <p>{post.title}</p>
-                            {post.content}
-                        </li>
+                        <Post title={post.title}
+                              content={post.content}
+                              created={post.created}
+                              owner={post.owner}
+                              key={post.title + post.created}
+                        />
                     ))}
                 </ul>
             )
