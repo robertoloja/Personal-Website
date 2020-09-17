@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import ReactMarkdown from 'react-markdown';
 import Floater from 'react-floater'
 
+const pilcrow = '\r\n\r\n'
 
 export default class Post extends Component {
     constructor(props) {
@@ -65,7 +66,7 @@ export default class Post extends Component {
                         </span>)
                     } else {
                         return (
-                            phrase.split('\r\n\r\n').map(x =>
+                            phrase.split(pilcrow).map(x =>
                                 <span className='mid'><ReactMarkdown source={x}/><br /><br /></span>))
                     }
                 })}

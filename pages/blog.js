@@ -68,6 +68,7 @@ const stylesheet = `a {
     color: blue;
     padding-left: 3px;
 }
+
 a:hover {
     border-bottom: 1px solid;
 }`
