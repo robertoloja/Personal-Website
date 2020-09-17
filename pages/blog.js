@@ -1,4 +1,4 @@
-const blogApiUrl = 'http://127.0.0.1:8000/'
+const blogApiUrl = 'https://rho-ohr-api.herokuapp.com/'
 
 class BlogPage extends React.Component {
     constructor(props) {
