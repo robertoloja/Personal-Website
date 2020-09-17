@@ -6,9 +6,30 @@ export default class Post extends Component {
     constructor(props) {
         super(props);
 
+        const separateFootNotes = text => {
+            let message = text.split('{')
+            let newMessage = []
+            let footnotes = []
+
+            message.map((x, i) => {
+                if (x.includes('}')) {
+                    footnotes.push(x.slice(0, x.indexOf('}')))
+                    console.log()
+                    newMessage += [x.replace('}', `[${i}](#footnote-${i})`)]
+                } else {
+                    newMessage += x
+                }
+            })
+
+            return {
+                bodyText: String(newMessage),
+                footnotes: footnotes,
+            }
+        }
+
         this.state = {
             title: props.title,
-            content: props.content,
+            content: separateFootNotes(props.content),
             created: new Date(props.created),
             owner: props.owner,
         }
@@ -21,7 +42,15 @@ export default class Post extends Component {
                     <strong style={strongStyle}>{this.state.title}</strong>
                     by {this.state.owner} on {this.state.created.toDateString()}
                 </h3>
-                <ReactMarkdown source={this.state.content} />
+                <ReactMarkdown source={this.state.content.bodyText}/>
+
+                <ul style={footnoteStyle}>
+                    {this.state.content.footnotes.map((footnote, i) =>
+                        <li id={`footnote-${i}`} key={i}>
+                            <a href='#'>{i + 1}</a>: {footnote}
+                        </li>
+                    )}
+                </ul>
             </div>
         )
     }
@@ -52,4 +81,8 @@ const strongStyle = {
     fontFamily: "'Fira Sans Condensed', sans-serif",
     fontSize: '130%',
     fontWeight: 'bold',
+}
+
+const footnoteStyle = {
+    listStyleType: 'none',
 }
