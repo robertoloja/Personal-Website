@@ -22,8 +22,18 @@ export default class Post extends Component {
     render() {
         return (
             <div style={style.outerDivStyle} key={this.props.title}>
-                <style dangerouslySetInnerHTML={{ // This is needed to position footnote links correctly.
-                    __html: `.mid>p { display: inline; white-space: normal; } pre[class*="language-"] {font-size: 0.8rem}`
+                <style dangerouslySetInnerHTML={{
+                    __html: `pre[class*="language-"] code { 
+                               font-family: Liberation;
+                               font-size: 0.8rem; 
+                               padding: 0.6rem; 
+                               line-height: 1; 
+                               margin: 0.2rem 
+                             }  
+                             .footnote-backref { 
+                               verticalAlign: super; 
+                               font-size: 80%
+                             }`
                 }}/>
 
                 <h3 style={style.titleStyle}>
@@ -38,20 +48,18 @@ export default class Post extends Component {
 
 const style = {
     outerDivStyle: {
-        background: 'rgba(30, 30, 30, 0.1)',
-        border: 'solid black 1px',
+        background: 'rgb(227,226,226, 0.5)',
+        border: 'solid #bbb 1px',
         borderRadius: '5px',
         boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.1)',
         padding: '2rem',
         paddingLeft: '3rem',
-        margin: '0 auto',
         marginTop: '2rem',
-        maxWidth: '70%',
         fontFamily: "'Mukta', sans-serif",
         textAlign: 'justify',
     },
     titleStyle: {
-        paddingLeft: '0',
+        paddingLeft: '1.5rem',
         paddingBottom: '0.5rem',
         fontWeight: 'normal',
         fontSize: '100%',
@@ -62,8 +70,4 @@ const style = {
         fontSize: '130%',
         fontWeight: 'bold',
     },
-    footnoteStyle: {
-        verticalAlign: 'super',
-        fontSize: '80%',
-    }
 }

@@ -1,5 +1,5 @@
 import Post from '../components/Blog/Post'
-import Head from "next/head";
+import Head from 'next/head';
 import React from "react";
 
 const blogApiUrl = 'https://rho-ohr-api.herokuapp.com/'
@@ -20,12 +20,12 @@ class BlogPage extends React.Component {
                 if (res.ok) return res.json()
             })
             .then(result => {
-                    this.setState({
-                        posts: result,
-                        isLoaded: true,
-                        error: null
-                    });
-                })
+                this.setState({
+                    posts: result,
+                    isLoaded: true,
+                    error: null
+                });
+            })
     }
 
     render() {
@@ -39,9 +39,11 @@ class BlogPage extends React.Component {
                     <title>Mah Blog</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-                    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap"
+                          rel="stylesheet"/>
                     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet"/>
-                    <link href="../static/css/prism.css" rel="stylesheet" />
+                    <link href="../static/fonts/liberation-mono.css" rel="stylesheet"/>
+                    <link href="../static/css/prism.css" rel="stylesheet"/>
                     <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
                 </Head>
                 Loading...
@@ -49,7 +51,7 @@ class BlogPage extends React.Component {
         } else {
             return (
                 <div style={{
-                    display: 'grid',
+                    margin: '0 auto',
                 }}>
                     <ul>
                         {posts.map(post => (
@@ -70,12 +72,13 @@ class BlogPage extends React.Component {
 const stylesheet = `a {
     outline: none;
     text-decoration: none;
-    color: blue;
+    color: #33a;
     padding-left: 3px;
 }
 
 a:hover {
-    border-bottom: 1px solid;
+    text-decoration: underline;
+    color: #99c;
 }`
 
 
