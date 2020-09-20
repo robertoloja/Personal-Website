@@ -12,6 +12,8 @@ export default class Markdown extends Component {
     }
 
     render() {
-        return <div dangerouslySetInnerHTML={{__html: this.state.md.render(this.state.content)}}/>;
-    }
+        return (
+        <div dangerouslySetInnerHTML={{__html: this.state.md.render(this.state.content)}}>
+        </div>
+    )}
 }

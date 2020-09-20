@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Floater from 'react-floater';
-import Markdown from './Markdown'
+import Prism from 'prismjs';
+import 'static/css/prism.css'
+import Markdown from './Markdown';
 
 export default class Post extends Component {
     constructor(props) {
@@ -14,13 +15,15 @@ export default class Post extends Component {
         }
     }
 
+    componentDidMount() {
+        Prism.highlightAll();
+    }
 
     render() {
-        console.log(this.state.content.bodyText)
         return (
             <div style={style.outerDivStyle} key={this.props.title}>
                 <style dangerouslySetInnerHTML={{ // This is needed to position footnote links correctly.
-                    __html: `.mid>p { display: inline; white-space: normal }`
+                    __html: `.mid>p { display: inline; white-space: normal; } pre[class*="language-"] {font-size: 0.8rem}`
                 }}/>
 
                 <h3 style={style.titleStyle}>
@@ -41,9 +44,9 @@ const style = {
         boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.1)',
         padding: '2rem',
         paddingLeft: '3rem',
+        margin: '0 auto',
         marginTop: '2rem',
-        marginLeft: '0',
-        maxWidth: '60%',
+        maxWidth: '70%',
         fontFamily: "'Mukta', sans-serif",
         textAlign: 'justify',
     },

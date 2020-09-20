@@ -18,7 +18,6 @@ class BlogPage extends React.Component {
         fetch(blogApiUrl + 'posts/')
             .then(res => {
                 if (res.ok) return res.json()
-                console.log(res)
             })
             .then(result => {
                     this.setState({
@@ -42,6 +41,7 @@ class BlogPage extends React.Component {
 
                     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet" />
                     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet"/>
+                    <link href="static/css/prism.css" rel="stylesheet" />
                     <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
                 </Head>
                 Loading...
