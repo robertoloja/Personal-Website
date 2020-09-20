@@ -16,7 +16,10 @@ class BlogPage extends React.Component {
 
     componentDidMount() {
         fetch(blogApiUrl + 'posts/')
-            .then(res => res.json())
+            .then(res => {
+                if (res.ok) return res.json()
+                console.log(res)
+            })
             .then(result => {
                     this.setState({
                         posts: result,
@@ -24,14 +27,6 @@ class BlogPage extends React.Component {
                         error: null
                     });
                 })
-            .catch(error => {
-                console.error(error);
-                this.setState({
-                    posts: [],
-                    isLoaded: false,
-                    error: error,
-                })
-            })
     }
 
     render() {

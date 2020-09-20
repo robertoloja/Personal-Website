@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import ReactMarkdown from 'react-markdown';
-import Floater from 'react-floater'
-
-const pilcrow = '\r\n\r\n'
+import Markdown from 'react-markdown/with-html';
+import Floater from 'react-floater';
 
 export default class Post extends Component {
     constructor(props) {
@@ -17,64 +15,56 @@ export default class Post extends Component {
     }
 
     separateFootNotes(text) {
-        const message = text.split('{')
-        let newMessage = []
-        let footnotes = []
+        /**
+         * Handle footnote syntax separately from standard markdown. Footnotes are demarcated by curly braces. E.g.:
+         *   > This _phrase_ is formatted with **Markdown**, and can have footnotes{This is the footnote text.}.
+         */
+        const footnoteRegex = /{(.*?)}/g
+        const footnotes = [...text.matchAll(footnoteRegex)].map(x => x[1]) // save capture group (i.e. strip braces)
 
-        message.map((x, i) => {
-            if (x.includes('}')) {
-                footnotes.push(x.slice(0, x.indexOf('}')))
-                newMessage.push(x.slice(x.indexOf('}') + 1, x.length))
-            } else {
-                newMessage.push(x)
-            }
-        })
+        let message = text.split('{')
+            .map(x => {
+                let y = x.split('}')
+                return y[1] ? y[1] : y[0]  // y == ['footnote}', '. Sentence after footnote.']
+            })
 
         return {
-            bodyText: newMessage,
+            bodyText: message,
             footnotes: footnotes,
         }
     }
 
     render() {
-        const parseFootnotes = (phrase, i) => {
-            if (this.state.content.footnotes[i]) {
-                return (
-                    <span className='mid'
-                          style={{display: 'inline-block'}}
-                          key={i}
-                    >
-                    <ReactMarkdown source={phrase}/>
-                    <a style={footnoteStyle}>
-                        <Floater showCloseButton={true} content={this.state.content.footnotes[i]}>{i + 1}</Floater>
-                    </a>
-                </span>)
-            } else {
-                return (
-                    phrase.split(pilcrow).map((x, i) =>
-                        <span className='mid' key={i}>
-                        <ReactMarkdown source={x}/>
-                        <br/>
-                        <br/>
-                    </span>)
-                )
-            }
-        }
-
+        console.log(this.state.content.bodyText)
         return (
             <div style={outerDivStyle} key={this.props.title}>
-                <style dangerouslySetInnerHTML={{
-                    __html: `.mid>p { 
-                        display: inline
-                      }`
-                }}/>
+                <style dangerouslySetInnerHTML={{ // This is needed to position footnote links correctly.
+                    __html: `.mid>p { display: inline; white-space: normal }`}}/>
 
                 <h3 style={titleStyle}>
                     <strong style={strongStyle}>{this.state.title}</strong>
                     by {this.state.owner} on {this.state.created.toDateString()}
                 </h3>
 
-                {this.state.content.bodyText.map(parseFootnotes)}
+                {this.state.content.bodyText.map(
+                    (x, i) => {
+                        if (!this.state.content.footnotes[i]) {
+                            console.log('1: ', x)
+                            return <Markdown source={x}/>
+                        } else {
+                            console.log('2: ', x)
+                            return (
+                                <span className='mid' style={{display: 'inline-block'}}>
+                                <Markdown source={x}/>
+                                <a style={footnoteStyle}>
+                                    <Floater showCloseButton={true}
+                                             content={this.state.content.footnotes[i]}>{i + 1}
+                                    </Floater>
+                                </a>
+                            </span>)
+                        }
+                    }
+                )}
             </div>
         )
     }
@@ -93,21 +83,19 @@ const outerDivStyle = {
     fontFamily: "'Mukta', sans-serif",
     textAlign: 'justify',
 }
-
 const titleStyle = {
     paddingLeft: '0',
     paddingBottom: '0.5rem',
     fontWeight: 'normal',
     fontSize: '100%',
 }
-
 const strongStyle = {
     display: 'block',
     fontFamily: "'Fira Sans Condensed', sans-serif",
     fontSize: '130%',
     fontWeight: 'bold',
 }
-
 const footnoteStyle = {
-    verticalAlign: 'super'
+    verticalAlign: 'super',
+    fontSize: '80%',
 }
