@@ -1,40 +1,12 @@
-import React, { Component } from 'react';
-import Markdown from './Markdown';
+import React, {Component} from 'react';
 import Prism from 'prismjs';
 import 'static/css/prism.css'
-
-export default class Post extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: props.title,
-            content: props.content,
-            created: new Date(props.created),
-            owner: props.owner,
-        }
-    }
-
-    componentDidMount() {
-        Prism.highlightAll();
-    }
-
-    render() {
-        return (
-            <div style={style.outerDivStyle} key={this.props.title}>
-                <style dangerouslySetInnerHTML={style.classes}/>
-
-                <h3 style={style.titleStyle}>
-                    <strong style={style.strongStyle}>{this.state.title}</strong>
-                    by {this.state.owner} on {this.state.created.toDateString()}
-                </h3>
-                <Markdown content={this.state.content}/>
-            </div>
-        )
-    }
-}
+import Markdown from './Markdown';
+import TextEditor from './TextEditor';
 
 const style = {
-    classes: {__html: `pre[class*="language-"] code { 
+    classes: {
+        __html: `pre[class*="language-"] code { 
                                font-family: Liberation;
                                font-size: 0.8rem; 
                                padding: 0.6rem; 
@@ -44,7 +16,8 @@ const style = {
                              .footnote-backref { 
                                verticalAlign: super; 
                                font-size: 80%
-                             }`},
+                             }`
+    },
     outerDivStyle: {
         background: 'rgb(227,226,226, 0.5)',
         border: 'solid #bbb 1px',
@@ -68,4 +41,45 @@ const style = {
         fontSize: '130%',
         fontWeight: 'bold',
     },
+}
+
+export default class Post extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: props.title,
+            content: props.content,
+            created: new Date(props.created),
+            owner: props.owner,
+            edit: false,
+        }
+    }
+
+    componentDidMount() {
+        Prism.highlightAll();
+    }
+
+
+    render() {
+        const editMode = () => {
+            if (this.state.edit) {
+                this.setState({edit: false})
+            } else {
+                this.setState({edit: true})
+            }
+        }
+
+        return (
+            <div style={style.outerDivStyle} key={this.props.title}>
+                <style dangerouslySetInnerHTML={style.classes}/>
+
+                <h3 style={style.titleStyle}>
+                    <strong style={style.strongStyle}>{this.state.title}</strong>
+                    by {this.state.owner} on {this.state.created.toDateString()}
+                </h3>
+                <h4><a onClick={editMode}>Edit</a></h4>
+                {this.state.edit ? <TextEditor text={this.state.content}/> : <Markdown content={this.state.content}/>}
+            </div>
+        )
+    }
 }

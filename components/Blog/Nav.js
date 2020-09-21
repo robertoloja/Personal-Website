@@ -6,6 +6,7 @@ export default function Nav() {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     useEffect(() => {
+        // TODO: Update this code
         const mediaQuery = window.matchMedia("(max-width: 700px)");
         mediaQuery.addListener(handleMediaQueryChange);
         handleMediaQueryChange(mediaQuery);
