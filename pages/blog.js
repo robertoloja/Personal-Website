@@ -55,7 +55,7 @@ class BlogPage extends React.Component {
                 <div style={{margin: '0 auto'}}>
                     <Nav></Nav>
                     <ul>
-                        {posts.map(post =>
+                        {posts.results.map(post =>
                             <Post title={post.title}
                                   content={post.content}
                                   created={post.created}
@@ -63,6 +63,7 @@ class BlogPage extends React.Component {
                                   key={post.title + post.created}/>
                         )}
                     </ul>
+                    <a href={posts.next}>Next</a>
                 </div>
             )
         }
