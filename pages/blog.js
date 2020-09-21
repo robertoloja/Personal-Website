@@ -57,10 +57,9 @@ class BlogPage extends React.Component {
             const showPaginationButtons = direction => {
                 if (posts && posts[direction.toLowerCase()]) {
                     return <a onClick={() => this.getPosts(posts[direction.toLowerCase()])}>{direction}</a>
-                } else {
-                    return
                 }
             }
+
             return (
                 <div style={{margin: '0 auto'}}>
                     <Nav></Nav>
@@ -71,7 +70,7 @@ class BlogPage extends React.Component {
                                   created={post.created}
                                   owner={post.owner}
                                   key={post.title + post.created}/>
-                        )  : ''}
+                        ) : ''}
                     </ul>
                     {showPaginationButtons('Previous')}
                     {showPaginationButtons('Next')}
