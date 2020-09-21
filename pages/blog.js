@@ -51,9 +51,16 @@ class BlogPage extends React.Component {
                     <link href="../static/css/prism.css" rel="stylesheet"/>
                     <style dangerouslySetInnerHTML={{__html: stylesheet}}/>
                 </Head>
-                Loading...
+                Give me a moment, I'm waking up a Heroku droplet...
             </div>
         } else {
+            const showPaginationButtons = direction => {
+                if (posts && posts[direction.toLowerCase()]) {
+                    return <a onClick={() => this.getPosts(posts[direction.toLowerCase()])}>{direction}</a>
+                } else {
+                    return
+                }
+            }
             return (
                 <div style={{margin: '0 auto'}}>
                     <Nav></Nav>
@@ -66,8 +73,8 @@ class BlogPage extends React.Component {
                                   key={post.title + post.created}/>
                         )  : ''}
                     </ul>
-                    {posts && posts.previous ? <a onClick={() => this.getPosts(posts.previous)}>Previous</a> : ''}
-                    {posts && posts.next ? <a onClick={() => this.getPosts(posts.next)}>Next</a> : ''}
+                    {showPaginationButtons('Previous')}
+                    {showPaginationButtons('Next')}
                 </div>
             )
         }
