@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import Markdown from './Markdown';
 import Prism from 'prismjs';
 import 'static/css/prism.css'
-import Markdown from './Markdown';
 
 export default class Post extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             title: props.title,
             content: props.content,
@@ -22,19 +21,7 @@ export default class Post extends Component {
     render() {
         return (
             <div style={style.outerDivStyle} key={this.props.title}>
-                <style dangerouslySetInnerHTML={{
-                    __html: `pre[class*="language-"] code { 
-                               font-family: Liberation;
-                               font-size: 0.8rem; 
-                               padding: 0.6rem; 
-                               line-height: 1; 
-                               margin: 0.2rem 
-                             }  
-                             .footnote-backref { 
-                               verticalAlign: super; 
-                               font-size: 80%
-                             }`
-                }}/>
+                <style dangerouslySetInnerHTML={style.classes}/>
 
                 <h3 style={style.titleStyle}>
                     <strong style={style.strongStyle}>{this.state.title}</strong>
@@ -47,6 +34,17 @@ export default class Post extends Component {
 }
 
 const style = {
+    classes: {__html: `pre[class*="language-"] code { 
+                               font-family: Liberation;
+                               font-size: 0.8rem; 
+                               padding: 0.6rem; 
+                               line-height: 1; 
+                               margin: 0.2rem 
+                             }  
+                             .footnote-backref { 
+                               verticalAlign: super; 
+                               font-size: 80%
+                             }`},
     outerDivStyle: {
         background: 'rgb(227,226,226, 0.5)',
         border: 'solid #bbb 1px',

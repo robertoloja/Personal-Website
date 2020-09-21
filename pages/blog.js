@@ -1,6 +1,7 @@
 import Post from '../components/Blog/Post'
+import Nav from '../components/Blog/Nav'
 import Head from 'next/head';
-import React from "react";
+import React from 'react';
 
 const blogApiUrl = 'https://rho-ohr-api.herokuapp.com/'
 
@@ -35,6 +36,7 @@ class BlogPage extends React.Component {
             return <div>Error: {error.message}</div>
         } else if (!isLoaded) {
             return <div>
+                <Nav></Nav>
                 <Head>
                     <title>Mah Blog</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -50,18 +52,16 @@ class BlogPage extends React.Component {
             </div>
         } else {
             return (
-                <div style={{
-                    margin: '0 auto',
-                }}>
+                <div style={{margin: '0 auto'}}>
+                    <Nav></Nav>
                     <ul>
-                        {posts.map(post => (
+                        {posts.map(post =>
                             <Post title={post.title}
                                   content={post.content}
                                   created={post.created}
                                   owner={post.owner}
-                                  key={post.title + post.created}
-                            />
-                        ))}
+                                  key={post.title + post.created}/>
+                        )}
                     </ul>
                 </div>
             )
@@ -80,6 +80,5 @@ a:hover {
     text-decoration: underline;
     color: #99c;
 }`
-
 
 export default BlogPage
