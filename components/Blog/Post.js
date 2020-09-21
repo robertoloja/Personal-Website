@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Prism from 'prismjs';
-import 'static/css/prism.css'
 import Markdown from './Markdown';
+import 'static/css/prism.css'
 import TextEditor from './TextEditor';
 
 const style = {
     classes: {
-        __html: `pre[class*="language-"] code { 
+        __html: `pre code[class*="language-"]{ 
                                font-family: Liberation;
                                font-size: 0.8rem; 
                                padding: 0.6rem; 
@@ -54,11 +54,6 @@ export default class Post extends Component {
             edit: false,
         }
     }
-
-    componentDidMount() {
-        Prism.highlightAll();
-    }
-
 
     render() {
         const editMode = () => {
