@@ -3,7 +3,6 @@ import Nav from '../components/Blog/Nav'
 import Head from 'next/head';
 import React from 'react';
 
-const blogApiUrl = 'https://rho-ohr-api.herokuapp.com/'
 
 class BlogPage extends React.Component {
     constructor(props) {
@@ -15,8 +14,8 @@ class BlogPage extends React.Component {
         };
     }
 
-    componentDidMount() {
-        fetch(blogApiUrl + 'posts/')
+    getPosts(endpoint) {
+        fetch(endpoint)
             .then(res => {
                 if (res.ok) return res.json()
             })
@@ -27,6 +26,10 @@ class BlogPage extends React.Component {
                     error: null
                 });
             })
+    }
+
+    componentDidMount() {
+        this.getPosts('https://rho-ohr-api.herokuapp.com/posts/')
     }
 
     render() {
@@ -55,15 +58,16 @@ class BlogPage extends React.Component {
                 <div style={{margin: '0 auto'}}>
                     <Nav></Nav>
                     <ul>
-                        {posts.results.map(post =>
+                        {posts && posts.results ? posts.results.map(post =>
                             <Post title={post.title}
                                   content={post.content}
                                   created={post.created}
                                   owner={post.owner}
                                   key={post.title + post.created}/>
-                        )}
+                        )  : ''}
                     </ul>
-                    <a href={posts.next}>Next</a>
+                    {posts && posts.previous ? <a onClick={() => this.getPosts(posts.previous)}>Previous</a> : ''}
+                    {posts && posts.next ? <a onClick={() => this.getPosts(posts.next)}>Next</a> : ''}
                 </div>
             )
         }
