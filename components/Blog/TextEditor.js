@@ -10,13 +10,14 @@ const TextEditor = (props) => {
         import('jodit-react')
     )
     const editor = useRef(null)
-    const [content, setContent] = useState('')
+
+    let value = (new Remarkable()).render(props.text)
+    const [content, setContent] = useState(value)
 
     const config = {
         readonly: false,
         preset: "inline"// all options from https://xdsoft.net/jodit/doc/
     }
-    let value = (new Remarkable()).render(props.text)
 
     return (
         <div style={{background: '#fff', padding: '10px'}}>
@@ -28,6 +29,7 @@ const TextEditor = (props) => {
                 onBlur={newContent => setContent(newContent)}
                 onChange={Prism.highlightAll}
             />
+            {console.log(content)}
         </div>
     )
 }

@@ -56,7 +56,6 @@ export default class Post extends Component {
     render() {
         const editMode = () => {
             //TODO: Should be based on auth
-            console.log(this.state.edit)
             if (this.state.edit) {
                 this.setState({edit: false})
             } else {
