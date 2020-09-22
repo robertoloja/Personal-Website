@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Markdown from './Markdown';
-import 'static/css/prism.css'
 import TextEditor from "./TextEditor";
 
 const style = {
