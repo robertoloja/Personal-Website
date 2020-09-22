@@ -20,9 +20,9 @@
     "autoprefixer": "^9.1.5",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-wrap-in-js": "^1.1.1",
-    "draft-js": "^0.11.7",
     "emailjs-com": "^2.6.3",
     "glob": "^7.1.6",
+    "jodit-react": "^1.0.63",
     "next": "^7.0.3",
     "node-sass": "^4.9.3",
     "postcss-easy-import": "^3.0.0",
@@ -34,7 +34,6 @@
     "react-floater": "^0.7.2",
     "react-google-recaptcha": "^2.1.0",
     "react-player": "^2.6.0",
-    "react-thumbnail-gallery": "^2.0.2",
     "remarkable": "^2.0.1",
     "sass-loader": "^7.1.0"
   },

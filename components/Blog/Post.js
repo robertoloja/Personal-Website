@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import Prism from 'prismjs';
 import Markdown from './Markdown';
 import 'static/css/prism.css'
-import TextEditor from './TextEditor';
+import TextEditor from "./TextEditor";
 
 const style = {
     classes: {
@@ -24,7 +23,6 @@ const style = {
         borderRadius: '5px',
         boxShadow: '2px 2px rgba(0.5, 0.5, 0.5, 0.1)',
         padding: '2rem',
-        paddingLeft: '3rem',
         marginTop: '2rem',
         fontFamily: "'Mukta', sans-serif",
         textAlign: 'justify',
@@ -43,6 +41,7 @@ const style = {
     },
 }
 
+
 export default class Post extends Component {
     constructor(props) {
         super(props);
@@ -57,6 +56,8 @@ export default class Post extends Component {
 
     render() {
         const editMode = () => {
+            //TODO: Should be based on auth
+            console.log(this.state.edit)
             if (this.state.edit) {
                 this.setState({edit: false})
             } else {
@@ -72,8 +73,8 @@ export default class Post extends Component {
                     <strong style={style.strongStyle}>{this.state.title}</strong>
                     by {this.state.owner} on {this.state.created.toDateString()}
                 </h3>
-                <h4><a onClick={editMode}>Edit</a></h4>
                 {this.state.edit ? <TextEditor text={this.state.content}/> : <Markdown content={this.state.content}/>}
+                <a onClick={editMode}>Edit</a>
             </div>
         )
     }

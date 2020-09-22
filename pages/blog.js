@@ -38,11 +38,12 @@ class BlogPage extends React.Component {
         if (error) {
             return <div>Error: {error.message}</div>
         } else if (!isLoaded) {
-            return <div>
-                <Nav></Nav>
+            return (
+            <div>
                 <Head>
                     <title>Mah Blog</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                    <meta charSet="utf-8"/>
 
                     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap"
                           rel="stylesheet"/>
@@ -53,6 +54,7 @@ class BlogPage extends React.Component {
                 </Head>
                 Give me a moment, I'm waking up a Heroku droplet...
             </div>
+            )
         } else {
             const showPaginationButtons = direction => {
                 if (posts && posts[direction.toLowerCase()]) {
@@ -62,8 +64,8 @@ class BlogPage extends React.Component {
 
             return (
                 <div style={{margin: '0 auto'}}>
-                    <Nav></Nav>
-                    <ul>
+                    <Nav/>
+                    <ul style={listStyle}>
                         {posts && posts.results ? posts.results.map(post =>
                             <Post title={post.title}
                                   content={post.content}
@@ -91,5 +93,10 @@ a:hover {
     text-decoration: underline;
     color: #99c;
 }`
+
+const listStyle = {
+    margin: '0',
+    padding: '0',
+}
 
 export default BlogPage
